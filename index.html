@@ -16,6 +16,7 @@
 
         <br>
         <hr>
+        <button class="menu-button" onclick="toggleNav()">Menu</button>
         <nav>
             <button onclick="window.location.href='index.html';">Home</button>
             <button onclick="scrollToSection('project')">Projects</button>
@@ -84,9 +85,9 @@
             </div>
             <div class="gamepro">
                 <div class="projectimg">
-                    <img src="img_folder/project_img/CityWitch.jpg" alt="Pig & Chicken" class="projectpic">
+                    <img src="placeholder.jpg" alt="Pig & Chicken" class="projectpic">
                       <div class="overlayforproject">
-                          <p>Details</p>
+                          <p></p>
                       </div>
                   </div>
                 <div class="text-container">
@@ -104,9 +105,9 @@
             </div>
             <div class="gamepro">
                 <div class="projectimg">
-                    <img src="img_folder/project_img/CityWitch.jpg" alt="Brinkmanship" class="projectpic">
+                    <img src="placeholder.jpg" alt="Brinkmanship" class="projectpic">
                       <div class="overlayforproject">
-                          <p>Details</p>
+                          <p></p>
                       </div>
                   </div>
                 <div class="text-container">
@@ -125,9 +126,9 @@
             </div>
             <div class="gamepro">
                 <div class="projectimg">
-                    <img src="img_folder/project_img/CityWitch.jpg" alt="Shepherds" class="projectpic">
+                    <img src="placeholder.jpg" alt="Shepherds" class="projectpic">
                       <div class="overlayforproject">
-                          <p>Details</p>
+                          <p></p>
                       </div>
                   </div>
                 <div class="text-container">
@@ -454,11 +455,37 @@
             section.scrollIntoView({ behavior: 'smooth' });
           }
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var menuButton = document.querySelector('.menu-button');
+            var nav = document.querySelector('nav');
+            var navButtons = document.querySelectorAll('nav button');
+
+            menuButton.addEventListener('click', function () {
+                nav.classList.toggle('active');
+                
+                // Check window width to determine whether to hide or show the menu button
+                if (window.innerWidth <= 600) {
+                    menuButton.style.display = 'none'; // Hide the menu button when the dropdown is active
+                }
+            });
+
+            navButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    nav.classList.remove('active');
+                    
+                    // Check window width to determine whether to hide or show the menu button
+                    if (window.innerWidth <= 600) {
+                        menuButton.style.display = 'block'; // Show the menu button when a navigation button is clicked
+                    }
+                });
+            });
+        });
     </script>
 </body>
 
 <footer>
-    This website is design/coded by myself!!!
+  © 2023 doratsai. All rights reserved.
 </footer>
 
 </html>

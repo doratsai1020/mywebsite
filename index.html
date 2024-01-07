@@ -10,487 +10,72 @@
 </head>
 
 <body>
-    <header>
-    <div class="headwords">
-        <h1 onclick="window.location.href='index.html';">Dora Tsai</h1>
-
-        <br>
-        <hr>
-        <button class="menu-button" onclick="toggleNav()">Menu</button>
-        <nav>
-            <button onclick="window.location.href='index.html';">Home</button>
-            <button onclick="scrollToSection('project')">Projects</button>
-            <button onclick="scrollToSection('code')">Code</button>
-            <button onclick="scrollToSection('3Dart')">3D Art</button>
-            <button onclick="scrollToSection('2Dart')">2D Art</button> 
-            <button onclick="scrollToSection('contact')">Contact</button>
-        </nav>
-        <hr>
-    </div>
-    </header>
-
-
     <main>
-        <section style="height:max-content;">
-            <!-- <div class="h2bg">
-                <h2>Introduction</h2>
-            </div> -->
-            <div class="introbox">
-                <div class="introtext">
-                    <p class="text">
-                    Welcome to my portfolio, a curated showcase of my academic journey as a <b>Computer Science Games</b> major with a minor in
-                    <b>Technical Game Art</b> at the University of Southern California. Proficient in coding, 2D art, 3D modeling (including
-                    texturing and rigging), game design, and narrative, I am dedicated to seamlessly blending technology and artistic
-                    expression. This collection not only highlights my foundational skills in game development but also emphasizes my
-                    expertise in crafting compelling narratives. Explore my work for a comprehensive view of my proficiency in <button class="tag" style="background-color: #a5d19b">Coding</button>,
-                    <button class="tag" style="background-color: #0889c9">2D Art</button>, <button class="tag" style="background-color: #65c2eb">3D Modeling</button>, 
-                    <button class="tag" style="background-color: #94bcd2">Game Design</button>, and <button class="tag" style="background-color: #5b9abc">Narrative</button> design.</p>
+        <section id="intropage" class="page">
+            <div class="contents">
+                <div class="introbox" style="display: flex;">
+                    <div class="bar" style="background-color: #69cdff;"></div>
+                    <div class="introtext">
+                        <h1>Dora Tsai</h1>
+                        <p class="text">
+                        Welcome to my portfolio, a curated showcase of my academic journey as a <b>Computer Science Games</b> major with a minor in
+                        <b>Technical Game Art</b> at the University of Southern California. Explore my work for a comprehensive view of my proficiency in <button class="tag" style="background-color: #a5d19b">Coding</button>,
+                        <button class="tag" style="background-color: #0889c9">2D Art</button>, <button class="tag" style="background-color: #65c2eb">3D Modeling</button>, 
+                        <button class="tag" style="background-color: #94bcd2">Game Design</button>, and <button class="tag" style="background-color: #5b9abc">Narrative</button> design.</p>
+                    </div>
                 </div>
-            </div>
-            <br>
-        </section>
-
-        <section id="project">
-            <div class="h2bg">
-                <h2>Projects</h2>
-            </div>
-            <div class="gamepro">
-                <div class="projectimg">
-                    <video width="640" height="360" controls>
-                        <source src="img_folder/project_img/CityWichTrailer.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                <br>
+                <div style="display: flex;">
+                    <div class="bar" style="background-color: #69cdff;"></div>
+                    <button class="nav projectbutton" style="color: #69cdff;" onclick="redirectToProjects()">Projects</button>
                 </div>
-                <div class="text-container">
-                    <span style="font-weight: 300; font-size: 30px;">City Witch 2023</span><br>
-                    <hr>
-                    <button class="tag" style="background-color: #0b5d85">Lead Artist</button>
-                    <button class="tag" style="background-color: #0889c9">2D Art</button>
-                    <button class="tag" style="background-color: #94bcd2">Creator</button>
-                    <button class="tag" style="background-color: #5b9abc">Narrative</button><br>
-                    <br><p>Embark on a magical journey in City Witch, a turn-based RPG where 
-                        players guide Remi, a young witch defending her city from disaster monsters. 
-                        Inherited from her retiring grandmother, the duty unfolds through a 
-                        narrative-rich, linear story. Engage in strategic battles with mini-games 
-                        triggering powerful attacks, exploring the origins of monsters and 
-                        reflecting on human distractions. City Witch delivers a captivating blend 
-                        of gameplay and introspective storytelling in a spellbinding urban fantasy. 
-                    </p><br>
-                    <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
-                        <li>2-person project</li>
-                        <li>Design and draw all art assets</li>
-                        <li>Animation, background, UI, etc.</li>
-                        <li>Conceptualize narrative and settings</li>
-                    </ul><br>
-                    <button class="playgame">Details</button>
+                <br>
+                <div style="display: flex;">
+                    <div class="bar" style="background-color: #a6e4f9;"></div>
+                    <button class="nav codebutton" style="color: #a6e4f9;" onclick="redirectToCode()">Code</button>
                 </div>
-            </div>
-            <div class="gamepro">
-                <div class="projectimg">
-                    <img src="placeholder.jpg" alt="Pig & Chicken" class="projectpic">
-                      <div class="overlayforproject">
-                          <p></p>
-                      </div>
-                  </div>
-                <div class="text-container">
-                    <span style="font-weight: 300; font-size: 30px;">Pig & Chicken 2024</span><br>
-                    <hr>
-                    <button class="tag" style="background-color: #0889c9">Artist</button>
-                    <button class="tag" style="background-color: #65c2eb">3D Modeling</button>
-                    <button class="tag" style="background-color: #80cdf0">3D Animation</button><br>
-                    <br><p>In Progress!!!</p>
-                    <br>
-                    <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
-                        <li>Model and animate all characters</li>
-                    </ul>
+                <br>
+                <div style="display: flex;">
+                    <div class="bar" style="background-color: #caecf3;"></div>
+                    <button class="nav artbutton" style="color: #caecf3;" onclick="redirectToArts()">Art</button>
                 </div>
-            </div>
-            <div class="gamepro">
-                <div class="projectimg">
-                    <img src="placeholder.jpg" alt="Brinkmanship" class="projectpic">
-                      <div class="overlayforproject">
-                          <p></p>
-                      </div>
-                  </div>
-                <div class="text-container">
-                    <span style="font-weight: 300; font-size: 30px;">Brinkmanship 2024</span><br>
-                    <hr>
-                    <button class="tag" style="background-color: #0889c9">Artist</button>
-                    <button class="tag" style="background-color: #65c2eb">3D Modeling</button>
-                    <button class="tag" style="background-color: #c8e2b8">UI Design</button><br>
-                    <br><p>In Progress!!!</p>
-                    <br>
-                    <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
-                        <li>Model assets</li>
-                        <li>UI/UX design</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="gamepro">
-                <div class="projectimg">
-                    <img src="placeholder.jpg" alt="Shepherds" class="projectpic">
-                      <div class="overlayforproject">
-                          <p></p>
-                      </div>
-                  </div>
-                <div class="text-container">
-                    <span style="font-weight: 300; font-size: 30px;">Shepherds 2024</span><br>
-                    <hr>
-                    <button class="tag" style="background-color: #0889c9">Artist</button><br>
-                    <br><p>In Progress!!!</p>
-                    <br>
-                    <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
-                        <li>Create fictional language</li>
-                        <li>Draw and design model texture</li>
-                    </ul>
+                <br>
+                <div style="display: flex;">
+                    <a href="mailto:doratsai@usc.edu" target="_blank" class="icon-link">
+                        <img src="img_folder/emaillogo.png" alt="Email" class="icon">
+                    </a>
+                
+                    <a href="https://linkedin.com/in/fangtungtsai" target="_blank" class="icon-link">
+                        <img src="img_folder/linkedinlogo.png" alt="LinkedIn" class="icon">
+                    </a>
+                
+                    <a href="https://github.com/doratsai1020" target="_blank" class="icon-link">
+                        <img src="img_folder/githublogo.png" alt="GitHub" class="icon">
+                    </a>
                 </div>
             </div>
         </section>
 
-        <br>
-        <section id="code">
-            <div class="h2bg">
-                <h2>Code</h2>
-            </div>
-            <p style="font-size: 13px; color: gray; margin-bottom: 20px;">
-                - Code can be provided upon request.
-            </p>
-            <ul class="codechart">
-                <li>
-                    <div class="codeimage">
-                        <a href="codes/portal/Lab12.html" target="_blank">
-                            <img src="img_folder/code_img/portal.jpg" alt="portal" class="codepic">
-                            <div class="overlay">
-                                <p>Play</p>
-                            </div>
-                        </a>
-                    </div><br>
-                    <span style="font-size: 16px;">Portal - 3D</span>
-                </li>
-                <li>
-                    <div class="codeimage">
-                        <a href="codes/mariocart/Lab08.html" target="_blank">
-                            <img src="img_folder/code_img/mariocart.jpg" alt="mariocart" class="codepic">
-                            <div class="overlay">
-                                <p>Play</p>
-                            </div>
-                        </a>
-                    </div><br>
-                    <span>Mario Cart - 3D</span>
-                </li>
-                <li>
-                    <div class="codeimage">
-                        <a href="codes/mario/Lab04.html" target="_blank">
-                            <img src="img_folder/code_img/mario.jpg" alt="mario" class="codepic">
-                            <div class="overlay">
-                                <p>Play</p>
-                            </div>
-                        </a>
-                    </div><br>
-                    <span>Mario - 2D</span>
-                </li>
-                <li>
-                    <div class="codeimage">
-                        <a href="codes/pacman/Lab05.html" target="_blank">
-                            <img src="img_folder/code_img/pacman.jpg" alt="pac-man" class="codepic">
-                            <div class="overlay">
-                                <p>Play</p>
-                            </div>
-                        </a>
-                    </div><br>
-                    <span>Pac-Man - 2D</span>
-                </li>
-                <li>
-                    <div class="codeimage">
-                        <a href="codes/starfox/Lab07.html" target="_blank">
-                            <img src="img_folder/code_img/starfox.jpg" alt="star fox" class="codepic">
-                            <div class="overlay">
-                                <p>Play</p>
-                            </div>
-                        </a>
-                    </div><br>
-                    <span>Star Fox Tunnel - 3D</span>
-                </li>
-                <li>
-                    <div class="codeimage">
-                        <a href="codes/zelda/Lab06.html" target="_blank">
-                            <img src="img_folder/code_img/zelda.jpg" alt="zelda" class="codepic">
-                            <div class="overlay">
-                                <p>Play</p>
-                            </div>
-                        </a>
-                    </div><br>
-                    <span>Zelda - 2D</span>
-                </li>
-                <li>
-                    <div class="codeimage">
-                        <a href="codes/frogger/Lab03.html" target="_blank">
-                            <img src="img_folder/code_img/frogger.jpg" alt="frogger" class="codepic">
-                            <div class="overlay">
-                                <p>Play</p>
-                            </div>
-                        </a>
-                    </div><br>
-                    <span>Frogger - 2D</span>
-                </li>
-                <li>
-                    <div class="codeimage">
-                        <a href="codes/astroid/Lab02.html" target="_blank">
-                            <img src="img_folder/code_img/astroid.jpg" alt="astroid" class="codepic">
-                            <div class="overlay">
-                                <p>Play</p>
-                            </div>
-                        </a>
-                    </div><br>
-                    <span>Astroid - 2D</span>
-                </li>
-                <li>
-                    <div class="codeimage">
-                        <a href="codes/pong/Lab01.html" target="_blank">
-                            <img src="img_folder/code_img/pong.jpg" alt="pong" class="codepic">
-                            <div class="overlay">
-                                <p>Play</p>
-                            </div>
-                        </a>
-                    </div><br>
-                    <span>Pong - 2D</span>
-                </li>
-            </ul>
-        </section>
-
-        <br>
-        <section id="3Dart">
-            <div class="h2bg">
-                <h2>3D Art</h2>
-            </div>
-            <div class="modelpro">
-                <div class="modelvid">
-                    <video width="640" height="360" controls>
-                        <source src="img_folder/3Dart/car_Movie.MP4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-            <div class="modelpro">
-                <div class="modelvid">
-                    <video width="640" height="360" controls>
-                        <source src="img_folder/3Dart/bunny_movie.MP4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-        </section>
-
-        <br>
-        <section id="2Dart">
-            <div class="h2bg">
-                <h2>2D Art</h2>
-            </div>
-            <ul class="artboard">
-                <li>
-                    <div class="artimage" onclick="openPopup('img_folder/project_img/citywitch/remi.jpg')">
-                        <img src="img_folder/project_img/citywitch/remi.jpg" alt="remi" class="art">
-                        <div class="overlayforart">
-                            <p>City Witch Character - Remi</p>
-                        </div>
-                    </div>
-                    <!-- The overlay and pop-up container -->
-                    <div id="overlay" onclick="closePopup()"></div>
-                        <div id="popup-container">
-                            <img id="popup-image" alt="Pop-up Image">
-                            <span class="close-btn" onclick="closePopup()"></span>
-                    </div>
-                </li>
-                <li>
-                    <div class="artimage" onclick="openPopup('img_folder/project_img/citywitch/erin.jpg')">
-                        <img src="img_folder/project_img/citywitch/erin.jpg" alt="erin" class="art">
-                        <div class="overlayforart">
-                            <p>City Witch Character - Erin</p>
-                        </div>
-                    </div>
-                    <!-- The overlay and pop-up container -->
-                    <div id="overlay" onclick="closePopup()"></div>
-                        <div id="popup-container">
-                            <img id="popup-image" alt="Pop-up Image">
-                            <span class="close-btn" onclick="closePopup()"></span>
-                    </div>
-                </li>
-                <li>
-                    <div class="artimage" onclick="openPopup('img_folder/project_img/citywitch/sasha.jpg')">
-                        <img src="img_folder/project_img/citywitch/sasha.jpg" alt="sasha" class="art">
-                        <div class="overlayforart">
-                            <p>City Witch Character - Sasha</p>
-                        </div>
-                    </div>
-                    <!-- The overlay and pop-up container -->
-                    <div id="overlay" onclick="closePopup()"></div>
-                        <div id="popup-container">
-                            <img id="popup-image" alt="Pop-up Image">
-                            <span class="close-btn" onclick="closePopup()"></span>
-                    </div>
-                </li>
-                <li>
-                    <div class="artimage" onclick="openPopup('img_folder/project_img/citywitch/monster.jpg')">
-                        <img src="img_folder/project_img/citywitch/monster.jpg" alt="monsters" class="art">
-                        <div class="overlayforart">
-                            <p>City Witch Character - Monsters</p>
-                        </div>
-                    </div>
-                    <!-- The overlay and pop-up container -->
-                    <div id="overlay" onclick="closePopup()"></div>
-                        <div id="popup-container">
-                            <img id="popup-image" alt="Pop-up Image">
-                            <span class="close-btn" onclick="closePopup()"></span>
-                    </div>
-                </li>
-                <li>
-                    <div class="artimage"onclick="openPopup('img_folder/project_img/citywitch/endscene1.jpg')">
-                        <img src="img_folder/project_img/citywitch/endscene1.jpg" alt="endscene1" class="art">
-                        <div class="overlayforart">
-                            <p>City Witch - Level One End Scene</p>
-                        </div>
-                    </div>
-                    <!-- The overlay and pop-up container -->
-                    <div id="overlay" onclick="closePopup()"></div>
-                        <div id="popup-container">
-                            <img id="popup-image" alt="Pop-up Image">
-                            <span class="close-btn" onclick="closePopup()"></span>
-                    </div>
-                </li>
-                <li>
-                    <div class="artimage" onclick="openPopup('img_folder/project_img/citywitch/endscene2.jpg')">
-                        <img src="img_folder/project_img/citywitch/endscene2.jpg" alt="endscene2" class="art">
-                        <div class="overlayforart">
-                            <p>City Witch - Level Two End Scene</p>
-                        </div>
-                    </div>
-                    <!-- The overlay and pop-up container -->
-                    <div id="overlay" onclick="closePopup()"></div>
-                        <div id="popup-container">
-                            <img id="popup-image" alt="Pop-up Image">
-                            <span class="close-btn" onclick="closePopup()"></span>
-                    </div>
-                </li>
-                <li>
-                    <div class="artimage" onclick="openPopup('img_folder/project_img/citywitch/endscene3.jpg')">
-                        <img src="img_folder/project_img/citywitch/endscene3.jpg" alt="endscene3" class="art">
-                        <div class="overlayforart">
-                            <p>City Witch - Level Three End Scene</p>
-                        </div>
-                    </div>
-                    <!-- The overlay and pop-up container -->
-                    <div id="overlay" onclick="closePopup()"></div>
-                        <div id="popup-container">
-                            <img id="popup-image" alt="Pop-up Image">
-                            <span class="close-btn" onclick="closePopup()"></span>
-                    </div>
-                </li>
-                <li>
-                    <div class="artimage"onclick="openPopup('img_folder/project_img/citywitch/finalscene.jpg')">
-                        <img src="img_folder/project_img/citywitch/finalscene.jpg" alt="finalscene" class="art">
-                        <div class="overlayforart">
-                            <p>City Witch - Ending Scene</p>
-                        </div>
-                    </div>
-                    <!-- The overlay and pop-up container -->
-                    <div id="overlay" onclick="closePopup()"></div>
-                        <div id="popup-container">
-                            <img id="popup-image" alt="Pop-up Image">
-                            <span class="close-btn" onclick="closePopup()"></span>
-                    </div>
-                </li>
-                <li>
-                    <div class="artimage" onclick="openPopup('img_folder/project_img/citywitch/coverbg.jpg')">
-                        <img src="img_folder/project_img/citywitch/coverbg.jpg" alt="coverbg" class="art">
-                        <div class="overlayforart">
-                            <p>City Witch - Cover Background</p>
-                        </div>
-                    </div>
-                    <!-- The overlay and pop-up container -->
-                    <div id="overlay" onclick="closePopup()"></div>
-                        <div id="popup-container">
-                            <img id="popup-image" alt="Pop-up Image">
-                            <span class="close-btn" onclick="closePopup()"></span>
-                    </div>
-                </li>
-            </ul>
-        </section>
-        <script>
-            function openPopup(imageSrc) {
-              document.getElementById('overlay').style.display = 'block';
-              document.getElementById('popup-container').style.display = 'block';
-              document.getElementById('popup-image').src = imageSrc;
-            }
-          
-            function closePopup() {
-              document.getElementById('overlay').style.display = 'none';
-              document.getElementById('popup-container').style.display = 'none';
-            }
-        </script>
-
-        <br>
-        <section id="contact">
-            <div class="h2bg">
-                <h2>Contact</h2>
-            </div>
-            <p style="font-size: 13px; color: gray; margin-bottom: 20px;">
-                - Email: doratsai@usc.edu
-            </p>
-            <div class="contact-icons">
-                <a href="mailto:doratsai@usc.edu" target="_blank" class="icon-link">
-                    <img src="mail.png" alt="Email" class="icon">
-                </a>
-            
-                <a href="https://linkedin.com/in/fangtungtsai" target="_blank" class="icon-link">
-                    <img src="linkedin.png" alt="LinkedIn" class="icon">
-                </a>
-            
-                <a href="https://github.com/doratsai1020" target="_blank" class="icon-link">
-                    <img src="github.png" alt="GitHub" class="icon">
-                </a>
-            </div>
-            
-        </section>
     </main>
 
+    <footer>
+        <p style="text-align: center; margin: 0;">© 2023 doratsai. All rights reserved.</p>
+    </footer>
+
     <script>
-        function scrollToSection(sectionId) {
-          var section = document.getElementById(sectionId);
-          if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-          }
+        function redirectToProjects() {
+            window.location.href = 'projects.html';
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            var menuButton = document.querySelector('.menu-button');
-            var nav = document.querySelector('nav');
-            var navButtons = document.querySelectorAll('nav button');
+        function redirectToCode() {
+            window.location.href = 'codepros.html';
+        }
 
-            menuButton.addEventListener('click', function () {
-                nav.classList.toggle('active');
-                
-                // Check window width to determine whether to hide or show the menu button
-                if (window.innerWidth <= 600) {
-                    menuButton.style.display = 'none'; // Hide the menu button when the dropdown is active
-                }
-            });
-
-            navButtons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                    nav.classList.remove('active');
-                    
-                    // Check window width to determine whether to hide or show the menu button
-                    if (window.innerWidth <= 600) {
-                        menuButton.style.display = 'block'; // Show the menu button when a navigation button is clicked
-                    }
-                });
-            });
-        });
+        function redirectToArts() {
+            window.location.href = 'arts.html';
+        }
     </script>
-</body>
 
-<footer>
-  © 2023 doratsai. All rights reserved.
-</footer>
+</body>
 
 </html>

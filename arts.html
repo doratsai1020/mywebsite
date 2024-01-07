@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dora Tsai's Portfolio Art</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <section id="projectpage" class="page">
+            <div class="contents">
+                <div style="display: flex;">
+                    <div class="bar" style="background-color: #69cdff;"></div>
+                    <h2>Arts</h2>
+                </div>
+                <br>
+                <div class="indexlist">
+                    <br>
+                    <div style="display: flex;">
+                        <div class="bar" style="background-color: #a6e4f9; width: 10px;"></div>
+                        <h2 style="font-size: 20px; font-weight: normal;">City Witch</h2>
+                    </div>
+                    <div class="artlist">
+                        <img src="img_folder/project_img/citywitch/remi.jpg" alt="remi" class="art" onclick="openPopup('img_folder/project_img/citywitch/remi.jpg')">
+                        <img src="img_folder/project_img/citywitch/erin.jpg" alt="erin" class="art" onclick="openPopup('img_folder/project_img/citywitch/erin.jpg')">
+                        <img src="img_folder/project_img/citywitch/sasha.jpg" alt="sasha" class="art" onclick="openPopup('img_folder/project_img/citywitch/sasha.jpg')">
+                        <img src="img_folder/project_img/citywitch/monster.jpg" alt="monsters" class="art" onclick="openPopup('img_folder/project_img/citywitch/monster.jpg')">
+                        <img src="img_folder/project_img/citywitch/coverbg.jpg" alt="remi" class="art" onclick="openPopup('img_folder/project_img/citywitch/coverbg.jpg')">
+                        <img src="img_folder/project_img/citywitch/endscene1.jpg" alt="end1" class="art" onclick="openPopup('img_folder/project_img/citywitch/endscene1.jpg')">
+                        <img src="img_folder/project_img/citywitch/endscene2.jpg" alt="end2" class="art" onclick="openPopup('img_folder/project_img/citywitch/endscene2.jpg')">
+                        <img src="img_folder/project_img/citywitch/endscene3.jpg" alt="end3" class="art" onclick="openPopup('img_folder/project_img/citywitch/endscene3.jpg')">
+                        <img src="img_folder/project_img/citywitch/finalscene.jpg" alt="fin" class="art" onclick="openPopup('img_folder/project_img/citywitch/finalscene.jpg')">
+                    </div>
+                    <br>
+                    <br>
+                    <div style="display: flex;">
+                        <div class="bar" style="background-color: #a6e4f9; width: 10px;"></div>
+                        <h2 style="font-size: 20px; font-weight: normal;">3D Arts</h2>
+                    </div>
+                    <div class="artlist">
+                        <video width="640" height="360" controls class="vid">
+                            <source src="img_folder/3Dart/car_Movie.MP4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <video width="640" height="360" controls class="vid">
+                            <source src="img_folder/3Dart/bunny_movie.MP4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="img_folder/3Dart/itp351.jpg" alt="itp351" class="art" onclick="openPopup('img_folder/3Dart/itp351.jpg')">
+                    </div>
+                </div>
+            </div>
+
+    <!-- Popup container -->
+    <div id="overlay" onclick="closePopup()"></div>
+    <div id="popup-container">
+        <img id="popup-image" src="" alt="popup">
+    </div>
+
+        </section>
+       
+    </main>
+
+    <footer>
+        <div style="display: flex;">
+            <h2 style="text-align: left; margin-left: 20px; cursor: pointer;" onclick="redirectToIntro()">Dora Tsai</h2>
+            <a href="mailto:doratsai@usc.edu" target="_blank" class="icon-link">
+                <img src="img_folder/emaillogo.png" alt="Email" class="footericon">
+            </a>
+        
+            <a href="https://linkedin.com/in/fangtungtsai" target="_blank" class="icon-link">
+                <img src="img_folder/linkedinlogo.png" alt="LinkedIn" class="footericon">
+            </a>
+        
+            <a href="https://github.com/doratsai1020" target="_blank" class="icon-link">
+                <img src="img_folder/githublogo.png" alt="GitHub" class="footericon">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function redirectToIntro() {
+            window.location.href = 'index.html';
+        }
+
+        function openPopup(source) {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup-container').style.display = 'block';
+
+            // Check if the source is an image or video
+            if (source.endsWith('.jpg') || source.endsWith('.jpeg') || source.endsWith('.png') || source.endsWith('.gif')) {
+                // If it's an image, show the image element and hide the video element
+                document.getElementById('popup-image').style.display = 'block';
+                document.getElementById('popup-image').src = source;
+            } 
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup-container').style.display = 'none';
+        }
+
+    </script>
+
+</body>
+
+</html>

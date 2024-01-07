@@ -1,17 +1,7 @@
-* {
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    scroll-padding-top: 200px;
-}
-
-@media only screen and (max-width: 600px) {
-    * {
-        scroll-padding-top: 380px;
-    }
-}
-
-body {
-    background-color: white;
+    overflow: hidden; /* Prevent scrolling */
     font-family: "Libre Franklin",
         "Helvetica Neue",
         helvetica,
@@ -20,92 +10,43 @@ body {
 }
 
 main {
-    margin: 40px 5% 0;
+    display: flex;
+    position: relative;
+    height: 100%;
 }
 
-section{
-    margin-bottom: 20px;
+section {
+    width: 100vw; /* 100% of the viewport width */
+    height: calc(100vh - 48px); /* Subtract the height of the footer */
+    justify-content: center;
+    align-items: center;
 }
 
-.menu-button {
-    display: none;
-}
-
-nav button {
-    margin: 10px;
-    background-color: transparent;
-    border: 0;
-    color: gray;
-    font-weight: 800;
-    font-size: 14px;
-    font-family: "Libre Franklin",
-            "Helvetica Neue",
-            helvetica,
-            arial,
-            sans-serif;
-}
-
-nav button:hover {
-    color: #9ed3f6;
-}
-
-@media only screen and (max-width: 600px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
-        display: none;
-    }
-
-    .menu-button {
-        display: block;
-        background-color: transparent;
-        border: 0;
-        color: gray;
-        font-weight: 800;
-        font-size: 14px;
-        font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
-        margin: 10px auto;
-        cursor: pointer;
-    }
-
-    .menu-button:hover {
-        color: #9ed3f6;
-    }
-
-    nav.active {
-        display: flex;
-    }
-}
-
-
-header {
-    position: sticky;
+.page {
+    position: absolute;
     top: 0;
-    z-index: 999;
-    background-color: #9ed3f6;
-    padding-top: 16px;
-}
-
-.headwords {
-    padding: 20px 5% 0;
-    background-color: white;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 button.tag {
     font-size: 13px;
     color: white;
     border: solid;
+    border-color: transparent;
     border-radius: 50px;
     padding: 0 8px;
     letter-spacing: 0.08em;
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 45px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin: 15px 0;
+    margin-top: 0;
 }
 
 h2 {
@@ -118,26 +59,186 @@ h2 {
     background-color: white;
 }
 
-.h2bg {
-    background-color: #9ed3f6;
+#intropage {
+    background: url('testbackground.jpg') center/cover no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contents {
+    padding: 6% 5%;
+    animation: slideIn 1s ease-out forwards;
+    display: flex;
+    flex-direction: column; /* Set the direction to column */
+    height: 100%;
+    overflow: auto;
 }
 
 .introbox {
-    background-color: #9ed3f6;
-    padding-left: 20px;
-    /* max-width: 800px; */
-    /* margin: 0 auto; */
+    display: flex;
+}
+
+.bar {
+    width: 20px;
 }
 
 .introtext {
     padding: 0 20px;
-    background-color: white;
-    padding-left: 20px;
+    background-color: transparent;
+    max-width: 400px;
 }
 
 .text {
     letter-spacing: 0.05em;
     line-height: 1.5;
+}
+
+h2 {
+    font-size: 28px;
+    margin: 0;
+    width: fit-content;
+    padding: 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+:root {
+    --project-color: #69cdff;
+    --code-color: #a6e4f9;
+    --art-color: #caecf3;
+}
+
+.nav {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    width: fit-content;
+    padding: 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    position: relative;
+    overflow: hidden;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--project-color);
+    transition: color 0.3s ease;
+    font-family: "Libre Franklin",
+        "Helvetica Neue",
+        helvetica,
+        arial,
+        sans-serif;
+}
+
+.nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--project-color);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: left 0.3s ease, background-color 0.3s ease;
+    z-index: -1;
+}
+
+.nav:hover::before {
+    left: 0;
+    background-color: var(--project-color);
+}
+
+/* Specificity increased for :hover */
+.nav:hover {
+    color: white !important;
+}
+
+.projectbutton {
+    color: var(--project-color);
+}
+
+.projectbutton::before {
+    background-color: var(--project-color);
+}
+
+.projectbutton:hover::before {
+    left: 0;
+    background-color: var(--project-color);
+}
+
+/* Specificity increased for :hover */
+.projectbutton:hover {
+    color: white;
+}
+
+.codebutton {
+    color: var(--code-color);
+}
+
+.codebutton::before {
+    background-color: var(--code-color);
+}
+
+.codebutton:hover::before {
+    left: 0;
+    background-color: var(--code-color);
+}
+
+/* Specificity increased for :hover */
+.codebutton:hover {
+    color: white;
+}
+
+.artbutton {
+    color: var(--art-color);
+}
+
+.artbutton::before {
+    background-color: var(--art-color);
+}
+
+.artbutton:hover::before {
+    left: 0;
+    background-color: var(--art-color);
+}
+
+/* Specificity increased for :hover */
+.artbutton:hover {
+    color: white;
+}
+
+.icon {
+    width: 30px;
+    margin: 10px;
+}
+
+.footericon {
+    height: 28px;
+    margin: 5px 10px;
+}
+
+/* PROJECTS */
+.projectlist {
+    overflow-y: auto; /* Enable vertical scrolling for the projectlist */
+    flex-grow: 1; /* Allow the projectlist to grow and take remaining space */
+    max-height: calc(100% - 200px);
+}
+
+/* Add this if needed to style the scroll bar */
+.projectlist::-webkit-scrollbar {
+    width: 8px;
+}
+
+.projectlist::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 4px;
+}
+
+.projectlist::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
 }
 
 .gamepro {
@@ -158,17 +259,73 @@ h2 {
     object-fit: cover; /* You can use 'cover' or 'contain' depending on your preference */
 }
 
-.projectimg:hover .overlayforproject {
-    opacity: 1;
-}
-
 .projectpic {
     display: block;
     width: 800px;
     height: 450px;
 }
 
-.overlayforproject {
+.text-container {
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    width: 400px;
+    min-width: 400px;
+    height: 450px;
+}
+
+/* CODE */
+.codelist {
+    overflow-y: auto; /* Enable vertical scrolling for the projectlist */
+    flex-grow: 1; /* Allow the projectlist to grow and take remaining space */
+    max-height: calc(100% - 250px);
+}
+
+/* Add this if needed to style the scroll bar */
+.codelist::-webkit-scrollbar {
+    width: 8px;
+}
+
+.codelist::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 4px;
+}
+
+.codelist::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+.codechart {
+    margin: 0;
+    padding: 0;
+}
+
+.codechart li {
+    display: inline-block;
+    width: 400px;
+    text-align: center;
+}
+
+.codeimage {
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    position: relative;
+    display: inline-block;
+}
+
+.codeimage:hover .overlay {
+    opacity: 1;
+}
+
+img.codepic {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -184,12 +341,95 @@ h2 {
     font-size: 30px;
 }
 
-.text-container {
-    font-size: 13px;
-    letter-spacing: 0.05em;
-    line-height: 1.5;
-    min-width: 400px;
-    height: 450px;
+/* ART */
+.art {
+    height: 300px; /* Set the desired height for the videos */
+    max-width: 100%; /* Ensure videos don't exceed the width of the container */
+    width: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+}
+
+.vid {
+    height: 300px; /* Set the desired height for the videos */
+    max-width: 100%; /* Ensure videos don't exceed the width of the container */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.indexlist {
+    overflow-y: auto; /* Enable vertical scrolling for indexlist */
+    max-height: 100vh; /* Set maximum height for vertical scrolling */
+    max-height: calc(100% - 200px);
+    padding-right: 10px;
+}
+
+.artlist {
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling for artlist */
+    max-width: 100%; /* Set maximum width for horizontal scrolling */
+}
+
+.artlist::-webkit-scrollbar {
+    width: 5px; /* Set the width of the scrollbar */
+    height: 5px;
+}
+
+.artlist::-webkit-scrollbar-track {
+    background-color: #caecf3; /* Set the background color of the track */
+}
+
+.artlist::-webkit-scrollbar-thumb {
+    background-color: #a6e4f9; /* Set the color of the scrollbar thumb */
+    border-radius: 80px; /* Optional: Add rounded corners to the thumb */
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000; /* Adjust z-index for overlay */
+}
+
+#popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Adjust z-index for popup container */
+    text-align: center; /* Center content */
+}
+
+#popup-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: auto;
+    display: block;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #69cdff;
+    color: white;
+    /* padding: 5px; */
+}
+
+@keyframes slideIn {
+    from {
+      transform: translateX(-100%); /* Start off-screen to the left */
+      opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+      transform: translateX(0); /* Move to the original position */
+      opacity: 1; /* Fade in */
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -214,207 +454,4 @@ h2 {
         min-width: 0;
         height: auto;
     }
-}
-
-button.playgame {
-    background-color: transparent;
-    font-size: 14px;
-    color: #9ed3f6;
-    border: solid;
-    border-color: #9ed3f6;
-    padding: 8px 20px;
-    margin-left: 20px;
-    letter-spacing: 0.08em;
-    font-weight: 800;
-}
-
-button.playgame:hover {
-    color: white;
-    background-color: #9ed3f6;
-    transition: background-color 0.3s;
-}
-
-.codechart {
-    margin: 0;
-    padding: 0;
-}
-
-.codechart li {
-    display: inline-block;
-    width: 300px;
-    text-align: center;
-    border: solid;
-    border-color: lightgray;
-    padding: 10px;
-    margin-right: 40px;
-    margin-bottom: 40px;
-}
-
-.codeimage {
-    width: 300px;
-    height: 300px;
-    background-size: cover;
-    position: relative;
-    display: inline-block;
-}
-
-.codeimage:hover .overlay {
-    opacity: 1;
-}
-
-img.codepic {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    font-size: 30px;
-}
-
-.modelpro {
-    display: flex;
-    margin-bottom: 50px;
-}
-
-.modelvid {
-    position: relative;
-    display: inline-block;
-}
-
-.modelvid video {
-    width: 100%; /* Make the image or video scale with the width of its container */
-    height: auto; /* Automatically adjust the height to maintain aspect ratio */
-    object-fit: cover;
-}
-
-.artboard{
-    margin: 0;
-    padding: 0;
-}
-
-.artboard li {
-    display: inline-block;
-    width: 300px;
-    text-align: center;
-    margin-bottom: 5px;
-    margin-right: 5px;
-}
-
-.artimage {
-    width: 300px;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    display: inline-block;
-}
-
-.artimage:hover .overlayforart {
-    opacity: 1;
-}
-
-.overlayforart {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    font-size: 20px;
-}
-
-img.art {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    text-align: center;
-}
-
-/* Additional styles for the pop-up */
-#overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control the darkness */
-    z-index: 999; /* Ensure the overlay is above the header */
-}
-
-#popup-container {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 1000;
-    max-width: 80%;
-    max-height: 90vh; /* Set the maximum height based on the viewport height */
-    overflow: auto; /* Enable scrolling if the content exceeds the max-height */
-  }
-
-#popup-image {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-
-.contact-icons {
-    margin: 20px auto;
-    text-align: center;
-}
-
-.icon-link {
-    text-decoration: none;
-    position: relative;
-}
-
-.icon {
-    width: 70px;
-    height: 70px;
-    margin: 20px;
-}
-
-.icon:hover {
-    scale: 1.5;
-    transition: opacity 0.3s ease;
-}
-
-footer {
-    display: block;
-    background-color: #9ed3f6;
-    text-align: center;
 }

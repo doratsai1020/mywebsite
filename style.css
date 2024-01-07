@@ -269,8 +269,7 @@ h2 {
     font-size: 13px;
     letter-spacing: 0.05em;
     line-height: 1.5;
-    width: 400px;
-    min-width: 400px;
+    max-width: 400px;
     height: 450px;
 }
 
@@ -344,7 +343,6 @@ img.codepic {
 /* ART */
 .art {
     height: 300px; /* Set the desired height for the videos */
-    max-width: 100%; /* Ensure videos don't exceed the width of the container */
     width: auto; /* Maintain aspect ratio */
     cursor: pointer;
 }

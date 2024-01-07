@@ -376,7 +376,7 @@ img.codepic {
 }
 
 .artlist::-webkit-scrollbar-track {
-    background-color: #caecf3; /* Set the background color of the track */
+    background-color:white; /* Set the background color of the track */
 }
 
 .artlist::-webkit-scrollbar-thumb {

@@ -60,7 +60,7 @@ h2 {
 }
 
 #intropage {
-    background: url('testbackground.jpg') center/cover no-repeat;
+    background: url('background.jpg') center/cover no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -270,6 +270,7 @@ h2 {
     letter-spacing: 0.05em;
     line-height: 1.5;
     max-width: 400px;
+    width:400px;
     height: 450px;
 }
 

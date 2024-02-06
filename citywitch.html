@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dora Tsai's Portfolio Projects</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <section id="projectpage" class="page">
+            <div class="contents">
+                <div style="display: flex;">
+                    <div class="bar" style="background-color: #69cdff;"></div>
+                    <h2>City Witch</h2>
+                </div>
+                <br>
+                <div class="projectlist">
+                    <div class="gamepro">
+                        <div class="projectimg">
+                            <video width="640" height="360" controls>
+                                <source src="project/citywitch/CityWichTrailer.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="text-container">
+                            <span style="font-weight: 300; font-size: 30px;">City Witch 2023</span><br>
+                            <hr>
+                            <button class="tag" style="background-color: #0b5d85">Lead Artist</button>
+                            <button class="tag" style="background-color: #0889c9">2D Art</button>
+                            <button class="tag" style="background-color: #94bcd2">Creator</button>
+                            <button class="tag" style="background-color: #5b9abc">Narrative</button><br>
+                            <p>Embark on a magical journey in City Witch, a turn-based RPG where 
+                                players guide Remi, a young witch defending her city from disaster monsters. 
+                                Inherited from her retiring grandmother, the duty unfolds through a 
+                                narrative-rich, linear story. Engage in strategic battles with mini-games 
+                                triggering powerful attacks, exploring the origins of monsters and 
+                                reflecting on human distractions. City Witch delivers a captivating blend 
+                                of gameplay and introspective storytelling in a spellbinding urban fantasy. 
+                            </p>
+                            <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                <li>2-person project</li>
+                                <li>Design and draw all art assets</li>
+                                <li>Animation, background, UI, etc.</li>
+                                <li>Conceptualize narrative and settings</li>
+                            </ul><br>
+                            <div style="display: flex;">
+                                <div class="bar" style="background-color: #69cdff; width: 15px"></div>
+                                <a href="https://qpc123.itch.io/city-witch" target="_blank" rel="noopener noreferrer">
+                                    <button class="nav projectbutton" style="color: #69cdff; font-size: 18px;">Play</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex;">
+                        <div class="bar" style="background-color: #69cdff; width: 15px"></div>
+                        <button class="nav projectbutton" style="color: #69cdff; font-size: 18px;" onclick="redirectToProjects()">Back</button>
+                    </div>
+                </div>
+
+        </section>
+       
+    </main>
+
+    <footer>
+        <div style="display: flex;">
+            <h2 style="text-align: left; margin-left: 20px; cursor: pointer;" onclick="redirectToIntro()">Dora Tsai</h2>
+            <a href="mailto:doratsai@usc.edu" target="_blank" class="icon-link">
+                <img src="img_folder/emaillogo.png" alt="Email" class="footericon">
+            </a>
+        
+            <a href="https://linkedin.com/in/fangtungtsai" target="_blank" class="icon-link">
+                <img src="img_folder/linkedinlogo.png" alt="LinkedIn" class="footericon">
+            </a>
+        
+            <a href="https://github.com/doratsai1020" target="_blank" class="icon-link">
+                <img src="img_folder/githublogo.png" alt="GitHub" class="footericon">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function redirectToIntro() {
+            window.location.href = 'index.html';
+        }
+
+        function redirectToProjects() {
+            window.location.href = 'projects.html';
+        }
+    </script>
+
+</body>
+
+</html>

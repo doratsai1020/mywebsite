@@ -9,6 +9,55 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<style>
+    .proimage {
+        width: 300px;
+        height: 300px;
+        background-size: cover;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .proimage:hover .overlay1 {
+        opacity: 1;
+    }
+
+    img.proimage {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+    }
+
+    .overlay1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        display: flex;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    button.tag {
+        margin: 2px;
+    }
+
+    .textc {
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        line-height: 1.5;
+        margin: 20px;
+    }
+</style>
+
 <body>
     <main>
         <section id="projectpage" class="page">
@@ -18,136 +67,88 @@
                     <h2>Projects</h2>
                 </div>
                 <br>
-                <div class="projectlist">
-                    <div class="gamepro">
-                        <div class="projectimg">
-                            <video width="640" height="360" controls>
-                                <source src="img_folder/project_img/CityWichTrailer.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="text-container">
-                            <span style="font-weight: 300; font-size: 30px;">City Witch 2023</span><br>
-                            <hr>
-                            <button class="tag" style="background-color: #0b5d85">Lead Artist</button>
-                            <button class="tag" style="background-color: #0889c9">2D Art</button>
-                            <button class="tag" style="background-color: #94bcd2">Creator</button>
-                            <button class="tag" style="background-color: #5b9abc">Narrative</button><br>
-                            <p>Embark on a magical journey in City Witch, a turn-based RPG where 
-                                players guide Remi, a young witch defending her city from disaster monsters. 
-                                Inherited from her retiring grandmother, the duty unfolds through a 
-                                narrative-rich, linear story. Engage in strategic battles with mini-games 
-                                triggering powerful attacks, exploring the origins of monsters and 
-                                reflecting on human distractions. City Witch delivers a captivating blend 
-                                of gameplay and introspective storytelling in a spellbinding urban fantasy. 
-                            </p>
-                            <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
-                                <li>2-person project</li>
-                                <li>Design and draw all art assets</li>
-                                <li>Animation, background, UI, etc.</li>
-                                <li>Conceptualize narrative and settings</li>
-                            </ul><br>
-                            <div style="display: flex;">
-                                <div class="bar" style="background-color: #69cdff; width: 15px"></div>
-                                <a href="https://qpc123.itch.io/city-witch" target="_blank" rel="noopener noreferrer">
-                                    <button class="nav projectbutton" style="color: #69cdff; font-size: 18px;">Play</button>
-                                </a>
+                <div class="codelist">
+                    <div class="proimage" onclick="directToCitywitch()">
+                        <img src="project/citywitch/Title_Page.jpg" alt="citywitch" class="codepic">
+                        <div class="overlay1">
+                            <div class="textc">
+                                <span style="font-weight: 300; font-size: 30px;">City Witch 2023</span><br>
+                                <hr>
+                                <button class="tag" style="background-color: #0b5d85">Lead Artist</button>
+                                <button class="tag" style="background-color: #0889c9">2D Art</button>
+                                <button class="tag" style="background-color: #94bcd2">Creator</button>
+                                <button class="tag" style="background-color: #5b9abc">Narrative</button><br>
+                                <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>2-person project</li>
+                                    <li>Design and draw all art assets</li>
+                                    <li>Animation, background, UI, etc.</li>
+                                    <li>Conceptualize narrative and settings</li>
+                                </ul><br>
                             </div>
                         </div>
                     </div>
-                    <div class="gamepro">
-                        <div class="projectimg">
-                            <img src="img_folder/project_img/little_dream_cover.jpg" alt="little dream" class="projectpic">
-                        </div>
-                        <div class="text-container">
-                            <span style="font-weight: 300; font-size: 30px;">Little Dream 2022</span><br>
-                            <hr>
-                            <button class="tag" style="background-color: #0b5d85">Lead Artist</button>
-                            <button class="tag" style="background-color: #0889c9">2D Art</button>
-                            <button class="tag" style="background-color: #94bcd2">Creator</button>
-                            <button class="tag" style="background-color: #5b9abc">Narrative</button><br>
-                            <p>"Little Dream," initially a solo endeavor, transformed into a 
-                                poignant board game encapsulating childhood ambition, helplessness
-                                , and nostalgia. The first version mirrored my personal vision, 
-                                portraying school kids striving to build a rocket and reach the moon 
-                                amid life's challenges. Version two, a collaborative effort, refined 
-                                the original with character cards, enhancing the narrative and player 
-                                engagement. This joint creation beautifully balances individual 
-                                creativity and collective imagination, serving as a reminder of childhood dreams 
-                            </p>
-                            <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
-                                <li>Board game</li>
-                                <li>solo/4-person(2.0ver) project</li>
-                                <li>Design and draw art assets</li>
-                                <li>Gameplay design</li>
-                                <li>Conceptualize narrative and settings</li>
-                            </ul><br>
-                            <div style="display: flex;">
-                                <div class="bar" style="background-color: #69cdff; width: 15px"></div>
-                                <a href="img_folder/project_img/littledream/The Little Dream to the Moon Photo Journal wk9 copy.pdf" target="_blank" rel="noopener noreferrer">
-                                    <button class="nav projectbutton" style="color: #69cdff; font-size: 18px;">Journal</button>
-                                </a>
+                    <div class="proimage" onclick="directToLittledream()">
+                        <img src="project/littledream/New_Cover.jpg" alt="littledream" class="codepic">
+                        <div class="overlay1">
+                            <div class="textc">
+                                <span style="font-weight: 300; font-size: 30px;">Little Dream 2022</span><br>
+                                <hr>
+                                <button class="tag" style="background-color: #0b5d85">Lead Artist</button>
+                                <button class="tag" style="background-color: #0889c9">2D Art</button>
+                                <button class="tag" style="background-color: #94bcd2">Creator</button>
+                                <button class="tag" style="background-color: #5b9abc">Narrative</button><br>
+                                <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>Board game</li>
+                                    <li>solo/4-person(2.0ver) project</li>
+                                    <li>Design and draw art assets</li>
+                                    <li>Gameplay design</li>
+                                    <li>Conceptualize narrative and settings</li>
+                                </ul><br>
                             </div>
                         </div>
                     </div>
-                    <div class="gamepro">
-                        <div class="projectimg">
-                            <img src="placeholder.jpg" alt="Pig & Chicken" class="projectpic">
-                              <div class="overlayforproject">
-                                  <p></p>
-                              </div>
-                          </div>
-                        <div class="text-container">
-                            <span style="font-weight: 300; font-size: 30px;">Pig & Chicken 2024</span><br>
-                            <hr>
-                            <button class="tag" style="background-color: #0889c9">Artist</button>
-                            <button class="tag" style="background-color: #65c2eb">3D Modeling</button>
-                            <button class="tag" style="background-color: #80cdf0">3D Animation</button><br>
-                            <br><p>In Progress!!!</p>
-                            <br>
-                            <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
-                                <li>Model and animate all characters</li>
-                            </ul>
+                    <div class="proimage">
+                        <img src="placeholder.jpg" alt="pig&chicken" class="codepic">
+                        <div class="overlay1">
+                            <div class="textc">
+                                <span style="font-weight: 300; font-size: 28px;">Pig & Chicken 2024</span><br>
+                                <hr>
+                                <button class="tag" style="background-color: #0889c9">Artist</button>
+                                <button class="tag" style="background-color: #65c2eb">3D Modeling</button>
+                                <button class="tag" style="background-color: #80cdf0">3D Animation</button><br>
+                                <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>Model and animate all characters</li>
+                                </ul><br>
+                            </div>
                         </div>
                     </div>
-                    <div class="gamepro">
-                        <div class="projectimg">
-                            <img src="placeholder.jpg" alt="Brinkmanship" class="projectpic">
-                              <div class="overlayforproject">
-                                  <p></p>
-                              </div>
-                          </div>
-                        <div class="text-container">
-                            <span style="font-weight: 300; font-size: 30px;">Brinkmanship 2024</span><br>
-                            <hr>
-                            <button class="tag" style="background-color: #0889c9">Artist</button>
-                            <button class="tag" style="background-color: #65c2eb">3D Modeling</button>
-                            <button class="tag" style="background-color: #c8e2b8">UI Design</button><br>
-                            <br><p>In Progress!!!</p>
-                            <br>
-                            <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
-                                <li>Model assets</li>
-                                <li>UI/UX design</li>
-                            </ul>
+                    <div class="proimage">
+                        <img src="placeholder.jpg" alt="Shepherds" class="codepic">
+                        <div class="overlay1">
+                            <div class="textc">
+                                <span style="font-weight: 300; font-size: 30px;">Shepherds 2024</span><br>
+                                <hr>
+                                <button class="tag" style="background-color: #0889c9">Artist</button>
+                                <button class="tag" style="background-color: #c8e2b8">UI Design</button><br>
+                                <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>Create fictional language</li>
+                                    <li>UI/UX design</li>
+                                </ul><br>
+                            </div>
                         </div>
                     </div>
-                    <div class="gamepro">
-                        <div class="projectimg">
-                            <img src="placeholder.jpg" alt="Shepherds" class="projectpic">
-                              <div class="overlayforproject">
-                                  <p></p>
-                              </div>
-                          </div>
-                        <div class="text-container">
-                            <span style="font-weight: 300; font-size: 30px;">Shepherds 2024</span><br>
-                            <hr>
-                            <button class="tag" style="background-color: #0889c9">Artist</button><br>
-                            <br><p>In Progress!!!</p>
-                            <br>
-                            <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
-                                <li>Create fictional language</li>
-                                <li>Draw and design model texture</li>
-                            </ul>
+                    <div class="proimage">
+                        <img src="placeholder.jpg" alt="Brinkmanship" class="codepic">
+                        <div class="overlay1">
+                            <div class="textc">
+                                <span style="font-weight: 300; font-size: 28px;">Brinkmanship 2024</span><br>
+                                <hr>
+                                <button class="tag" style="background-color: #0889c9">Artist</button>
+                                <button class="tag" style="background-color: #65c2eb">3D Modeling</button><br>
+                                <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>Model assets</li>
+                                </ul><br>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -177,6 +178,14 @@
     <script>
         function redirectToIntro() {
             window.location.href = 'index.html';
+        }
+
+        function directToCitywitch() {
+            window.location.href = 'citywitch.html';
+        }
+
+        function directToLittledream() {
+            window.location.href = 'littledream.html';
         }
     </script>
 

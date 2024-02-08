@@ -243,7 +243,7 @@ h2 {
 
 .gamepro {
     display: flex;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     flex-direction: row;
 }
 
@@ -272,6 +272,17 @@ h2 {
     max-width: 400px;
     width:400px;
     height: 450px;
+}
+
+.thumbnail {
+    height: 100px; /* Set the desired height for the videos */
+    width: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+}
+
+.thumbnail:hover {
+    -webkit-filter: opacity(.5);
+    filter: opacity(.5);
 }
 
 /* CODE */
@@ -358,19 +369,19 @@ img.codepic {
     max-width: 100%; /* Set maximum width for horizontal scrolling */
 }
 
-.artlist::-webkit-scrollbar {
-    width: 5px; /* Set the width of the scrollbar */
+/* .artlist::-webkit-scrollbar {
+    width: 5px; 
     height: 5px;
 }
 
 .artlist::-webkit-scrollbar-track {
-    background-color:white; /* Set the background color of the track */
+    background-color:white;
 }
 
 .artlist::-webkit-scrollbar-thumb {
-    background-color: #a6e4f9; /* Set the color of the scrollbar thumb */
-    border-radius: 80px; /* Optional: Add rounded corners to the thumb */
-}
+    background-color: #a6e4f9;
+    border-radius: 80px;
+} */
 
 #overlay {
     display: none;
@@ -423,7 +434,7 @@ footer {
 @media only screen and (max-width: 600px) {
     .gamepro {
         flex-direction: column;
-        margin-bottom: 30px;
+        /* margin-bottom: 30px; */
     }
 
     .projectimg {

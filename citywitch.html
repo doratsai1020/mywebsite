@@ -55,12 +55,28 @@
                             </div>
                         </div>
                     </div>
+                    <div class="artlist">
+                        <img src="project/citywitch/remi.jpg" alt="remi" class="thumbnail" onclick="openPopup('project/citywitch/remi.jpg')">
+                        <img src="project/citywitch/erin.jpg" alt="erin" class="thumbnail" onclick="openPopup('project/citywitch/erin.jpg')">
+                        <img src="project/citywitch/sasha.jpg" alt="sasha" class="thumbnail" onclick="openPopup('project/citywitch/sasha.jpg')">
+                        <img src="project/citywitch/monster.jpg" alt="monsters" class="thumbnail" onclick="openPopup('project/citywitch/monster.jpg')">
+                        <img src="project/citywitch/endscene1.jpg" alt="end1" class="thumbnail" onclick="openPopup('project/citywitch/endscene1.jpg')">
+                        <img src="project/citywitch/endscene2.jpg" alt="end2" class="thumbnail" onclick="openPopup('project/citywitch/endscene2.jpg')">
+                        <img src="project/citywitch/endscene3.jpg" alt="end3" class="thumbnail" onclick="openPopup('project/citywitch/endscene3.jpg')">
+                        <img src="project/citywitch/finalscene.jpg" alt="fin" class="thumbnail" onclick="openPopup('project/citywitch/finalscene.jpg')">
+                    </div>
+                    <br>
                     <div style="display: flex;">
                         <div class="bar" style="background-color: #69cdff; width: 15px"></div>
                         <button class="nav projectbutton" style="color: #69cdff; font-size: 18px;" onclick="redirectToProjects()">Back</button>
                     </div>
                 </div>
-
+            </div>
+                <!-- Popup container -->
+            <div id="overlay" onclick="closePopup()"></div>
+            <div id="popup-container">
+                <img id="popup-image" src="" alt="popup">
+            </div>
         </section>
        
     </main>
@@ -89,6 +105,23 @@
 
         function redirectToProjects() {
             window.location.href = 'projects.html';
+        }
+
+        function openPopup(source) {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup-container').style.display = 'block';
+
+            // Check if the source is an image or video
+            if (source.endsWith('.jpg') || source.endsWith('.jpeg') || source.endsWith('.png') || source.endsWith('.gif')) {
+                // If it's an image, show the image element and hide the video element
+                document.getElementById('popup-image').style.display = 'block';
+                document.getElementById('popup-image').src = source;
+            } 
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup-container').style.display = 'none';
         }
     </script>
 

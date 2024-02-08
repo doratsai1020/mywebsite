@@ -15,7 +15,7 @@
             <div class="contents">
                 <div style="display: flex;">
                     <div class="bar" style="background-color: #69cdff;"></div>
-                    <h2>Projects</h2>
+                    <h2>Little Dream</h2>
                 </div>
                 <br>
                 <div class="projectlist">
@@ -54,11 +54,30 @@
                             </div>
                         </div>
                     </div>
+                    <div class="artlist">
+                        <img src="project/littledream/rules.jpg" alt="rules" class="thumbnail" onclick="openPopup('project/littledream/rules.jpg')">
+                        <img src="project/littledream/rocket.jpg" alt="rocket" class="thumbnail" onclick="openPopup('project/littledream/rocket.jpg')">
+                        <img src="project/littledream/characterback.jpg" alt="ccardb" class="thumbnail" onclick="openPopup('project/littledream/characterback.jpg')">
+                        <img src="project/littledream/charactercard.jpg" alt="ccard" class="thumbnail" onclick="openPopup('project/littledream/charactercard.jpg')">
+                        <img src="project/littledream/functioncard.jpg" alt="fcard" class="thumbnail" onclick="openPopup('project/littledream/functioncard.jpg')">
+                        <img src="project/littledream/Gainmaterial.jpg" alt="gcard" class="thumbnail" onclick="openPopup('project/littledream/Gainmaterial.jpg')">
+                        <img src="project/littledream/Unfreecard.jpg" alt="ucard" class="thumbnail" onclick="openPopup('project/littledream/Unfreecard.jpg')">
+                        <img src="project/littledream/Breakingcard.jpg" alt="bcard" class="thumbnail" onclick="openPopup('project/littledream/Breakingcard.jpg')">
+                        <img src="project/littledream/Reportcard.jpg" alt="rcard" class="thumbnail" onclick="openPopup('project/littledream/Reportcard.jpg')">
+                    </div>
+                    <br>
                     <div style="display: flex;">
                         <div class="bar" style="background-color: #69cdff; width: 15px"></div>
                         <button class="nav projectbutton" style="color: #69cdff; font-size: 18px;" onclick="redirectToProjects()">Back</button>
                     </div>
                 </div>
+            </div>
+
+            <!-- Popup container -->
+            <div id="overlay" onclick="closePopup()"></div>
+            <div id="popup-container">
+                <img id="popup-image" src="" alt="popup">
+            </div>
         </section>
        
     </main>
@@ -83,6 +102,27 @@
     <script>
         function redirectToIntro() {
             window.location.href = 'index.html';
+        }
+
+        function redirectToProjects() {
+            window.location.href = 'projects.html';
+        }
+
+        function openPopup(source) {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup-container').style.display = 'block';
+
+            // Check if the source is an image or video
+            if (source.endsWith('.jpg') || source.endsWith('.jpeg') || source.endsWith('.png') || source.endsWith('.gif')) {
+                // If it's an image, show the image element and hide the video element
+                document.getElementById('popup-image').style.display = 'block';
+                document.getElementById('popup-image').src = source;
+            } 
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup-container').style.display = 'none';
         }
     </script>
 

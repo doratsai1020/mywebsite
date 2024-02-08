@@ -411,6 +411,38 @@ img.codepic {
     display: block;
 }
 
+#overlay button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+#overlay button.prev {
+    position: fixed;
+    left: 30px;
+}
+
+#overlay button.next {
+    position: fixed;
+    right: 30px;
+}
+
+#overlay button.close {
+    position: fixed;
+    top: 30px; /* Adjust top positioning */
+    right: 30px; /* Adjust right positioning */
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px; /* Add padding for better visibility */
+}
+
 footer {
     position: absolute;
     bottom: 0;

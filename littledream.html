@@ -74,7 +74,11 @@
             </div>
 
             <!-- Popup container -->
-            <div id="overlay" onclick="closePopup()"></div>
+            <div id="overlay" onclick="closePopup()">
+                <button class="close" onclick="closePopup()">&#10005;</button>
+                <button class="prev" onclick="prevImage()">&#10094;</button>
+                <button class="next" onclick="nextImage()">&#10095;</button>
+            </div>
             <div id="popup-container">
                 <img id="popup-image" src="" alt="popup">
             </div>
@@ -108,22 +112,54 @@
             window.location.href = 'projects.html';
         }
 
-        function openPopup(source) {
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('popup-container').style.display = 'block';
+        var images = [
+            'project/littledream/rules.jpg',
+            'project/littledream/rocket.jpg',
+            'project/littledream/characterback.jpg',
+            'project/littledream/charactercard.jpg',
+            'project/littledream/functioncard.jpg',
+            'project/littledream/Gainmaterial.jpg',
+            'project/littledream/Unfreecard.jpg',
+            'project/littledream/Breakingcard.jpg',
+            'project/littledream/Reportcard.jpg'
+        ];
 
-            // Check if the source is an image or video
-            if (source.endsWith('.jpg') || source.endsWith('.jpeg') || source.endsWith('.png') || source.endsWith('.gif')) {
-                // If it's an image, show the image element and hide the video element
-                document.getElementById('popup-image').style.display = 'block';
-                document.getElementById('popup-image').src = source;
-            } 
-        }
+    var currentIndex = 0;
 
-        function closePopup() {
+    function openPopup(source) {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('popup-container').style.display = 'block';
+
+        currentIndex = images.indexOf(source);
+
+        showImage();
+    }
+
+    function showImage() {
+        var source = images[currentIndex];
+        document.getElementById('popup-image').src = source;
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage();
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage();
+    }
+
+    function closePopup(event) {
+        // Check if the click occurred on the "x" button
+        if (event.target.classList.contains('close')) {
             document.getElementById('overlay').style.display = 'none';
             document.getElementById('popup-container').style.display = 'none';
         }
+    }
+
+    document.getElementById('overlay').addEventListener('click', closePopup);
+
     </script>
 
 </body>

@@ -270,7 +270,7 @@ h2 {
     letter-spacing: 0.05em;
     line-height: 1.5;
     max-width: 400px;
-    width:400px;
+    min-width:390px;
     height: 450px;
 }
 

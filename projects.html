@@ -21,6 +21,7 @@
 
     .proimage:hover .overlay1 {
         opacity: 1;
+        cursor: pointer;
     }
 
     img.proimage {
@@ -74,12 +75,12 @@
                             <div class="textc">
                                 <span style="font-weight: 300; font-size: 30px;">City Witch 2023</span><br>
                                 <hr>
+                                <button class="tag" style="background-color: #94bcd2">Director</button>
                                 <button class="tag" style="background-color: #0b5d85">Lead Artist</button>
                                 <button class="tag" style="background-color: #0889c9">2D Art</button>
-                                <button class="tag" style="background-color: #94bcd2">Creator</button>
                                 <button class="tag" style="background-color: #5b9abc">Narrative</button><br>
                                 <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
-                                    <li>2-person project</li>
+                                    <li>Team size: 2</li>
                                     <li>Design and draw all art assets</li>
                                     <li>Animation, background, UI, etc.</li>
                                     <li>Conceptualize narrative and settings</li>
@@ -93,13 +94,13 @@
                             <div class="textc">
                                 <span style="font-weight: 300; font-size: 30px;">Little Dream 2022</span><br>
                                 <hr>
+                                <button class="tag" style="background-color: #94bcd2">Director</button>
                                 <button class="tag" style="background-color: #0b5d85">Lead Artist</button>
                                 <button class="tag" style="background-color: #0889c9">2D Art</button>
-                                <button class="tag" style="background-color: #94bcd2">Creator</button>
                                 <button class="tag" style="background-color: #5b9abc">Narrative</button><br>
                                 <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
                                     <li>Board game</li>
-                                    <li>solo/4-person(2.0ver) project</li>
+                                    <li>Team size: 1 -> 4(2.0 ver)</li>
                                     <li>Design and draw art assets</li>
                                     <li>Gameplay design</li>
                                     <li>Conceptualize narrative and settings</li>
@@ -108,7 +109,7 @@
                         </div>
                     </div>
                     <div class="proimage">
-                        <img src="placeholder.jpg" alt="pig&chicken" class="codepic">
+                        <img src="project/pigandchicken/pccov.jpg" alt="pig&chicken" class="codepic">
                         <div class="overlay1">
                             <div class="textc">
                                 <span style="font-weight: 300; font-size: 28px;">Pig & Chicken 2024</span><br>
@@ -117,13 +118,16 @@
                                 <button class="tag" style="background-color: #65c2eb">3D Modeling</button>
                                 <button class="tag" style="background-color: #80cdf0">3D Animation</button><br>
                                 <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
-                                    <li>Model and animate all characters</li>
+                                    <li>Team size: 30~35</li>
+                                    <li>Develop models for all characters</li>
+                                    <li>Establish rigs for all characters</li>
+                                    <li>Produce animations for all character</li>
                                 </ul><br>
                             </div>
                         </div>
                     </div>
                     <div class="proimage">
-                        <img src="placeholder.jpg" alt="Shepherds" class="codepic">
+                        <img src="project/shepherds/shepherdscov.jpg" alt="Shepherds" class="codepic">
                         <div class="overlay1">
                             <div class="textc">
                                 <span style="font-weight: 300; font-size: 30px;">Shepherds 2024</span><br>
@@ -131,22 +135,27 @@
                                 <button class="tag" style="background-color: #0889c9">Artist</button>
                                 <button class="tag" style="background-color: #c8e2b8">UI Design</button><br>
                                 <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>Team size: 35~40</li>
                                     <li>Create fictional language</li>
                                     <li>UI/UX design</li>
                                 </ul><br>
                             </div>
                         </div>
                     </div>
-                    <div class="proimage">
-                        <img src="placeholder.jpg" alt="Brinkmanship" class="codepic">
+                    <div class="proimage" onclick="directToBrinkmanship()">
+                        <img src="project/brinkmanship/brinkmanshipcover.png" alt="Brinkmanship" class="codepic">
                         <div class="overlay1">
                             <div class="textc">
                                 <span style="font-weight: 300; font-size: 28px;">Brinkmanship 2024</span><br>
                                 <hr>
                                 <button class="tag" style="background-color: #0889c9">Artist</button>
-                                <button class="tag" style="background-color: #65c2eb">3D Modeling</button><br>
+                                <button class="tag" style="background-color: #65c2eb">3D Modeling</button>
+                                <button class="tag" style="background-color: #80cdf0">3D Animation</button><br>
                                 <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>Team size: ~25</li>
                                     <li>Model assets</li>
+                                    <li>Model and rig first-person model</li>
+                                    <li>Create first-person perspective animations</li>
                                 </ul><br>
                             </div>
                         </div>
@@ -186,6 +195,10 @@
 
         function directToLittledream() {
             window.location.href = 'littledream.html';
+        }
+
+        function directToBrinkmanship() {
+            window.location.href = 'brinkmanship.html';
         }
     </script>
 

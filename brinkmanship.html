@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dora Tsai's Portfolio Projects</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <section id="projectpage" class="page">
+            <div class="contents">
+                <div style="display: flex;">
+                    <div class="bar" style="background-color: #69cdff;"></div>
+                    <h2>Brinkmanship</h2>
+                </div>
+                <br>
+                <div class="projectlist">
+                    <div class="gamepro">
+                        <div class="projectimg">
+                            <iframe width="800" height="450" src="https://www.youtube.com/embed/BGSEGfEPpyY?autoplay=1" frameborder="0" allowfullscreen></iframe>
+
+                        </div>
+                        <div class="text-container">
+                            <span style="font-weight: 300; font-size: 30px;">Brinkmanship 2024</span><br>
+                            <hr>
+                            <button class="tag" style="background-color: #0889c9">Artist</button>
+                            <button class="tag" style="background-color: #65c2eb">3D Modeling</button>
+                            <button class="tag" style="background-color: #80cdf0">3D Animation</button><br>
+                            <p>Brinkmanship is a first person sci-fi mystery about greed, manipulation,
+                                 and trust. As a spaceborne colonist 20 years into your voyage you’ve 
+                                 just discovered that your ship has secretly altered its heading. 
+                                 Your parents give you a gun. The ship goes into lockdown. 
+                                 What do you do? Who will you trust?
+                            </p>
+                            <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                <li>Team size: ~25</li>
+                                <li>Model assets</li>
+                                <li>Model and rig first-person model</li>
+                                <li>Create first-person perspective animations</li>
+                            </ul><br>
+                            <div style="display: flex;">
+                                <div class="bar" style="background-color: #69cdff; width: 15px"></div>
+                                <a href="https://store.steampowered.com/app/2858410/Brinkmanship/" target="_blank" rel="noopener noreferrer">
+                                    <button class="nav projectbutton" style="color: #69cdff; font-size: 18px;">Play</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artlist">
+                        <img src="project/brinkmanship/scene.jpg" alt="scene" class="thumbnail" onclick="openPopup('project/brinkmanship/scene.jpg')">
+                        <img src="project/brinkmanship/chair.jpg" alt="chair" class="thumbnail" onclick="openPopup('project/brinkmanship/chair.jpg')">
+                        <img src="project/brinkmanship/speakerphone.png" alt="speakerphone" class="thumbnail" onclick="openPopup('project/brinkmanship/speakerphone.png')">
+                        <img src="project/brinkmanship/arm.jpg" alt="arm" class="thumbnail" onclick="openPopup('project/brinkmanship/arm.jpg')">
+                    </div>
+                    <br>
+                    <div style="display: flex;">
+                        <div class="bar" style="background-color: #69cdff; width: 15px"></div>
+                        <button class="nav projectbutton" style="color: #69cdff; font-size: 18px;" onclick="redirectToProjects()">Back</button>
+                    </div>
+                </div>
+            </div>
+                <!-- Popup container -->
+            <div id="overlay" onclick="closePopup()">
+                <button class="close" onclick="closePopup()">&#10005;</button>
+                <button class="prev" onclick="prevImage()">&#10094;</button>
+                <button class="next" onclick="nextImage()">&#10095;</button>
+            </div>
+            <div id="popup-container">
+                <img id="popup-image" src="" alt="popup">
+            </div>
+        </section>
+       
+    </main>
+
+    <footer>
+        <div style="display: flex;">
+            <h2 style="text-align: left; margin-left: 20px; cursor: pointer;" onclick="redirectToIntro()">Dora Tsai</h2>
+            <a href="mailto:doratsai@usc.edu" target="_blank" class="icon-link">
+                <img src="img_folder/emaillogo.png" alt="Email" class="footericon">
+            </a>
+        
+            <a href="https://linkedin.com/in/fangtungtsai" target="_blank" class="icon-link">
+                <img src="img_folder/linkedinlogo.png" alt="LinkedIn" class="footericon">
+            </a>
+        
+            <a href="https://github.com/doratsai1020" target="_blank" class="icon-link">
+                <img src="img_folder/githublogo.png" alt="GitHub" class="footericon">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function redirectToIntro() {
+            window.location.href = 'index.html';
+        }
+
+        function redirectToProjects() {
+            window.location.href = 'projects.html';
+        }
+
+        var images = [
+            'project/brinkmanship/scene.jpg',
+            'project/brinkmanship/chair.jpg',
+            'project/brinkmanship/speakerphone.png',
+            'project/brinkmanship/arm.jpg'
+        ];
+
+    var currentIndex = 0;
+
+    function openPopup(source) {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('popup-container').style.display = 'block';
+
+        currentIndex = images.indexOf(source);
+
+        showImage();
+    }
+
+    function showImage() {
+        var source = images[currentIndex];
+        document.getElementById('popup-image').src = source;
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage();
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage();
+    }
+
+    function closePopup(event) {
+        // Check if the click occurred on the "x" button
+        if (event.target.classList.contains('close')) {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup-container').style.display = 'none';
+        }
+    }
+
+    document.getElementById('overlay').addEventListener('click', closePopup);
+
+    </script>
+
+</body>
+
+</html>

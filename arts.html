@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<style>
+    img.art {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+    }
+</style>
+
 <body>
     <main>
         <section id="projectpage" class="page">
@@ -18,61 +28,57 @@
                     <h2>Arts</h2>
                 </div>
                 <br>
-                <div class="indexlist">
-                    <br>
-                    <div style="display: flex;">
-                        <div class="bar" style="background-color: #a6e4f9; width: 10px;"></div>
-                        <h2 style="font-size: 20px; font-weight: normal;">City Witch</h2>
+                <div class="projectlist">
+                    <div class="codeimage" onclick="openPopup('img_folder/2Dart/karin.jpg')">
+                        <img src="img_folder/2Dart/karin.jpg" alt="karin" class="art">
+                        <div class="overlay">
+                            <p style="font-size: 16px; text-align: center;">
+                                <span style="font-weight: bold; font-size: 20px;">Poster Design</span><br>
+                            </p>
+                        </div>
                     </div>
-                    <div class="artlist">
-                        <img src="project/citywitch/remi.jpg" alt="remi" class="art" onclick="openPopup('project/citywitch/remi.jpg')">
-                        <img src="project/citywitch/erin.jpg" alt="erin" class="art" onclick="openPopup('project/citywitch/erin.jpg')">
-                        <img src="project/citywitch/sasha.jpg" alt="sasha" class="art" onclick="openPopup('project/citywitch/sasha.jpg')">
-                        <img src="project/citywitch/monster.jpg" alt="monsters" class="art" onclick="openPopup('project/citywitch/monster.jpg')">
-                        <img src="project/citywitch/endscene1.jpg" alt="end1" class="art" onclick="openPopup('project/citywitch/endscene1.jpg')">
-                        <img src="project/citywitch/endscene2.jpg" alt="end2" class="art" onclick="openPopup('project/citywitch/endscene2.jpg')">
-                        <img src="project/citywitch/endscene3.jpg" alt="end3" class="art" onclick="openPopup('project/citywitch/endscene3.jpg')">
-                        <img src="project/citywitch/finalscene.jpg" alt="fin" class="art" onclick="openPopup('project/citywitch/finalscene.jpg')">
+                    <div class="codeimage" onclick="openPopup('img_folder/3Dart/itp351.jpg')">
+                        <img src="img_folder/3Dart/itp351.jpg" alt="itp351" class="art">
+                        <div class="overlay">
+                            <p style="font-size: 16px; text-align: center;">
+                                <span style="font-weight: bold; font-size: 20px;">Character Model</span><br>
+                            </p>
+                        </div>
                     </div>
-                    <br>
-                    <br>
-                    <div style="display: flex;">
-                        <div class="bar" style="background-color: #a6e4f9; width: 10px;"></div>
-                        <h2 style="font-size: 20px; font-weight: normal;">Little Dream</h2>
+                    <div class="codeimage" onclick="openPopup('img_folder/3Dart/car_Movie.MP4')">
+                        <img src="img_folder/3Dart/car_Movie.MP4" alt="itp215" class="art">
+                        <div class="overlay">
+                            <p style="font-size: 16px; text-align: center;">
+                                <span style="font-weight: bold; font-size: 20px;">Car Animation</span><br>
+                            </p>
+                        </div>
                     </div>
-                    <div class="artlist">
-                        <img src="project/littledream/rules.jpg" alt="rules" class="art" onclick="openPopup('project/littledream/rules.jpg')">
-                        <img src="project/littledream/rocket.jpg" alt="rocket" class="art" onclick="openPopup('project/littledream/rocket.jpg')">
-                        <img src="project/littledream/characterback.jpg" alt="ccardb" class="art" onclick="openPopup('project/littledream/characterback.jpg')">
-                        <img src="project/littledream/charactercard.jpg" alt="ccard" class="art" onclick="openPopup('project/littledream/charactercard.jpg')">
-                        <img src="project/littledream/functioncard.jpg" alt="fcard" class="art" onclick="openPopup('project/littledream/functioncard.jpg')">
-                        <img src="project/littledream/Gainmaterial.jpg" alt="gcard" class="art" onclick="openPopup('project/littledream/Gainmaterial.jpg')">
-                        <img src="project/littledream/Unfreecard.jpg" alt="ucard" class="art" onclick="openPopup('project/littledream/Unfreecard.jpg')">
-                        <img src="project/littledream/Breakingcard.jpg" alt="bcard" class="art" onclick="openPopup('project/littledream/Breakingcard.jpg')">
-                        <img src="project/littledream/Reportcard.jpg" alt="rcard" class="art" onclick="openPopup('project/littledream/Reportcard.jpg')">
+                    <div class="codeimage" onclick="openPopup('img_folder/3Dart/bunny_movie.MP4')">
+                        <img src="img_folder/3Dart/bunny_movie.MP4" alt="ctan252" class="art">
+                        <div class="overlay">
+                            <p style="font-size: 16px; text-align: center;">
+                                <span style="font-weight: bold; font-size: 20px;">Bunny Animation</span><br>
+                            </p>
+                        </div>
                     </div>
-                    <br>
-                    <br>
-                    <div style="display: flex;">
-                        <div class="bar" style="background-color: #a6e4f9; width: 10px;"></div>
-                        <h2 style="font-size: 20px; font-weight: normal;">3D Arts</h2>
-                    </div>
-                    <div class="artlist">
-                        <video width="640" height="360" controls class="vid">
-                            <source src="img_folder/3Dart/car_Movie.MP4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <video width="640" height="360" controls class="vid">
-                            <source src="img_folder/3Dart/bunny_movie.MP4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <img src="img_folder/3Dart/itp351.jpg" alt="itp351" class="art" onclick="openPopup('img_folder/3Dart/itp351.jpg')">
+                    <div class="codeimage" onclick="openPopup('img_folder/2Dart/kin-on.jpg')">
+                        <img src="img_folder/2Dart/kin-on.jpg" alt="kinon" class="art">
+                        <div class="overlay">
+                            <p style="font-size: 16px; text-align: center;">
+                                <span style="font-weight: bold; font-size: 20px;">Tap Wonder Competetion</span><br>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-    <!-- Popup container -->
-    <div id="overlay" onclick="closePopup()"></div>
+     <!-- Popup container -->
+     <div id="overlay" onclick="closePopup()">
+        <button class="close" onclick="closePopup()">&#10005;</button>
+        <button class="prev" onclick="prevImage()">&#10094;</button>
+        <button class="next" onclick="nextImage()">&#10095;</button>
+    </div>
     <div id="popup-container">
         <img id="popup-image" src="" alt="popup">
     </div>
@@ -103,22 +109,50 @@
             window.location.href = 'index.html';
         }
 
+        var images = [
+            'img_folder/2Dart/karin.jpg',
+            'img_folder/3Dart/itp351.jpg',
+            'img_folder/3Dart/car_Movie.MP4',
+            'img_folder/3Dart/bunny_movie.MP4',
+            'img_folder/2Dart/kin-on.jpg',
+        ];
+
+        var currentIndex = 0;
+
         function openPopup(source) {
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('popup-container').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('popup-container').style.display = 'block';
 
-            // Check if the source is an image or video
-            if (source.endsWith('.jpg') || source.endsWith('.jpeg') || source.endsWith('.png') || source.endsWith('.gif')) {
-                // If it's an image, show the image element and hide the video element
-                document.getElementById('popup-image').style.display = 'block';
-                document.getElementById('popup-image').src = source;
-            } 
+        currentIndex = images.indexOf(source);
+
+        showImage();
         }
 
-        function closePopup() {
-            document.getElementById('overlay').style.display = 'none';
-            document.getElementById('popup-container').style.display = 'none';
+        function showImage() {
+            var source = images[currentIndex];
+            document.getElementById('popup-image').src = source;
         }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage();
+        }
+
+        function closePopup(event) {
+            // Check if the click occurred on the "x" button
+            if (event.target.classList.contains('close')) {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('popup-container').style.display = 'none';
+            }
+        }
+
+        document.getElementById('overlay').addEventListener('click', closePopup);
+
 
     </script>
 

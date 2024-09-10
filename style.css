@@ -64,6 +64,7 @@ h2 {
     background: url('background.jpg') center/cover no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
 }
 
 .contents {

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dora Tsai's Portfolio Projects</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <section id="projectpage" class="page">
+            <div class="contents">
+                <div style="display: flex;">
+                    <div class="bar" style="background-color: #69cdff;"></div>
+                    <h2>The Wind and the Wisp</h2>
+                </div>
+                <br>
+                <div class="projectlist">
+                    <div class="gamepro">
+                        <div class="projectimg">
+                            <img src="placeholder.jpg" alt="pc" class="projectpic">
+                        </div>
+                        <div class="text-container">
+                            <span style="font-weight: 300; font-size: 30px;">The Wind and the Wisp 2025</span><br>
+                            <hr>
+                            <button class="tag" style="background-color: #65c2eb">3D Rigging</button>
+                            <button class="tag" style="background-color: #65c2eb">3D Animation</button>
+                            <button class="tag" style="background-color: #65c2eb">3D Modeling</button>
+                            <button class="tag" style="background-color: #a5d19b">Coding</button><br>
+                            <p> Coming soon!!!
+                            </p>
+                            <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                <li>Team size: 15~20</li>
+                                    <li>Importing animation to engine</li>
+                                    <li>Rigged and animate props</li>
+                                    <li>Helped team members with rigging and animation debugging</li>
+                            </ul><br>
+                            <div style="display: flex;">
+                                <!-- <div class="bar" style="background-color: #69cdff; width: 15px"></div>
+                                <a href="https://queburs.itch.io/pig-chikin" target="_blank" rel="noopener noreferrer">
+                                    <button class="nav projectbutton" style="color: #69cdff; font-size: 18px;">Play</button>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artlist">
+                        <img src="project/thewindandthewisp/chrysanthemum.jpg" alt="pc" class="thumbnail" onclick="openPopup('project/thewindandthewisp/chrysanthemum.jpg')">
+                        <img src="project/thewindandthewisp/chrysanthemum.gif" alt="pc" class="thumbnail" onclick="openPopup('project/thewindandthewisp/chrysanthemum.gif')">
+                        <img src="project/thewindandthewisp/zinnia.jpg" alt="pc" class="thumbnail" onclick="openPopup('project/thewindandthewisp/zinnia.jpg')">
+                        <img src="project/thewindandthewisp/zinnia.gif" alt="pc" class="thumbnail" onclick="openPopup('project/thewindandthewisp/zinnia.gif')">
+                        <img src="project/thewindandthewisp/lilyofthevalley.jpg" alt="pc" class="thumbnail" onclick="openPopup('project/thewindandthewisp/lilyofthevalley.jpg')">
+                        <img src="project/thewindandthewisp/lilyofthevalley.gif alt="pc" class="thumbnail" onclick="openPopup('project/thewindandthewisp/lilyofthevalley.gif')">
+                        <img src="project/thewindandthewisp/forgetmenot.jpg" alt="pc" class="thumbnail" onclick="openPopup('project/thewindandthewisp/forgetmenot.jpg')">
+                        <img src="project/thewindandthewisp/forgetmenot.gif" alt="pc" class="thumbnail" onclick="openPopup('project/thewindandthewisp/forgetmenot.gif')">
+                        <img src="project/thewindandthewisp/petunia.jpg" alt="pc" class="thumbnail" onclick="openPopup('project/thewindandthewisp/petunia.jpg')">
+                        <img src="project/thewindandthewisp/petunia.gif" alt="pc" class="thumbnail" onclick="openPopup('project/thewindandthewisp/petunia.gif')">
+                        <img src="project/thewindandthewisp/calendula.jpg" alt="pc" class="thumbnail" onclick="openPopup('project/thewindandthewisp/calendula.jpg')">
+                        <img src="project/thewindandthewisp/calendula.gif" alt="pc" class="thumbnail" onclick="openPopup('project/thewindandthewisp/calendula.gif')">
+                    </div>
+                    <br>
+                    <div style="display: flex;">
+                        <div class="bar" style="background-color: #69cdff; width: 15px"></div>
+                        <button class="nav projectbutton" style="color: #69cdff; font-size: 18px;" onclick="redirectToProjects()">Back</button>
+                    </div>
+                </div>
+            </div>
+                <!-- Popup container -->
+            <div id="overlay" onclick="closePopup()">
+                <button class="close" onclick="closePopup()">&#10005;</button>
+                <button class="prev" onclick="prevImage()">&#10094;</button>
+                <button class="next" onclick="nextImage()">&#10095;</button>
+            </div>
+            <div id="popup-container">
+                <img id="popup-image" src="" alt="popup">
+            </div>
+        </section>
+       
+    </main>
+
+    <footer>
+        <div style="display: flex;">
+            <h2 style="text-align: left; margin-left: 20px; cursor: pointer;" onclick="redirectToIntro()">Dora Tsai</h2>
+            <a href="mailto:doratsai@usc.edu" target="_blank" class="icon-link">
+                <img src="img_folder/emaillogo.png" alt="Email" class="footericon">
+            </a>
+        
+            <a href="https://linkedin.com/in/fangtungtsai" target="_blank" class="icon-link">
+                <img src="img_folder/linkedinlogo.png" alt="LinkedIn" class="footericon">
+            </a>
+        
+            <a href="https://github.com/doratsai1020" target="_blank" class="icon-link">
+                <img src="img_folder/githublogo.png" alt="GitHub" class="footericon">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function redirectToIntro() {
+            window.location.href = 'index.html';
+        }
+
+        function redirectToProjects() {
+            window.location.href = 'projects.html';
+        }
+
+        var images = [
+            'project/thewindandthewisp/chrysanthemum.jpg',
+            'project/thewindandthewisp/chrysanthemum.gif',
+            'project/thewindandthewisp/zinnia.jpg',
+            'project/thewindandthewisp/zinnia.gif',
+            'project/thewindandthewisp/lilyofthevalley.jpg',
+            'project/thewindandthewisp/lilyofthevalley.gif',
+            'project/thewindandthewisp/forgetmenot.jpg',
+            'project/thewindandthewisp/forgetmenot.gif',
+            'project/thewindandthewisp/petunia.jpg',
+            'project/thewindandthewisp/petunia.gif',
+            'project/thewindandthewisp/calendula.jpg',
+            'project/thewindandthewisp/calendula.gif',
+        ];
+
+    var currentIndex = 0;
+
+    function openPopup(source) {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('popup-container').style.display = 'block';
+
+        currentIndex = images.indexOf(source);
+
+        showImage();
+    }
+
+    function showImage() {
+        var source = images[currentIndex];
+        document.getElementById('popup-image').src = source;
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage();
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage();
+    }
+
+    function closePopup(event) {
+        // Check if the click occurred on the "x" button
+        if (event.target.classList.contains('close')) {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup-container').style.display = 'none';
+        }
+    }
+
+    document.getElementById('overlay').addEventListener('click', closePopup);
+
+    </script>
+
+</body>
+
+</html>

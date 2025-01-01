@@ -9,70 +9,269 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<style>
+    .projectlist {
+        overflow-y: auto; /* Enable vertical scrolling for the projectlist */
+        flex-grow: 1; /* Allow the projectlist to grow and take remaining space */
+        max-height: calc(80%);
+    }
+
+    .projectlist::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .projectlist::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border-radius: 4px;
+    }
+
+    .projectlist::-webkit-scrollbar-track {
+        background-color: #f0f0f0;
+    }
+
+    .proimage {
+        width: 300px;
+        height: 300px;
+        background-size: cover;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .proimage:hover .overlay1 {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    img.proimage {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+    }
+
+    .overlay1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        display: flex;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    button.tag {
+        margin: 2px;
+    }
+
+    .textc {
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        line-height: 1.5;
+        margin: 20px;
+    }
+</style>
+
 <body>
     <main>
-        <section id="intropage" class="page">
+        <section id="projectpage" class="page">
             <div class="contents">
-                <div class="introbox" style="display: flex;">
+                <div style="display: flex;">
                     <div class="bar" style="background-color: #69cdff;"></div>
-                    <div class="introtext">
-                        <h1>Dora Tsai</h1>
-                        <p class="text">
-                        Welcome to my portfolio, a curated showcase of my academic journey as a <b>Computer Science Games</b> major with a minor in
-                        <b>Technical Game Art</b> at the University of Southern California. Explore my work for a comprehensive view of my proficiency in <button class="tag" style="background-color: #a5d19b">Coding</button>,
-                        <button class="tag" style="background-color: #0889c9">2D Art</button>, <button class="tag" style="background-color: #65c2eb">3D Art</button>, 
-                        <button class="tag" style="background-color: #94bcd2">Game Design</button>, and <button class="tag" style="background-color: #5b9abc">Narrative</button> design.</p>
+                    <h2>Projects</h2>
+                </div>
+                <br>
+                <div class="projectlist">
+                    <div class="proimage" onclick="redirectToThewindandthewisp()">
+                        <img src="placeholder.jpg" alt="thewingandthewisp" class="codepic">
+                        <div class="overlay1">
+                            <div class="textc">
+                                <span style="font-weight: 300; font-size: 24px;">The Wind and The Wisp 2025</span><br>
+                                <hr>
+                                <button class="tag" style="background-color: #65c2eb">3D Rigging</button>
+                                <button class="tag" style="background-color: #65c2eb">3D Animation</button>
+                                <button class="tag" style="background-color: #65c2eb">3D Modeling</button>
+                                <button class="tag" style="background-color: #a5d19b">Coding</button><br>
+                                <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>Team size: 15~20</li>
+                                    <li>Importing animation to engine</li>
+                                    <li>Rigged and animate props</li>
+                                    <li>Helped team members with rigging and animation debugging</li>
+                                </ul><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proimage" onclick="redirectToMythoflumi()">
+                        <img src="placeholder.jpg" alt="mythoflumi" class="codepic">
+                        <div class="overlay1">
+                            <div class="textc">
+                                <span style="font-weight: 300; font-size: 30px;">Myth of Lumi 2025</span><br>
+                                <hr>
+                                <button class="tag" style="background-color: #65c2eb">3D Rigging</button>
+                                <button class="tag" style="background-color: #65c2eb">3D Animation</button>
+                                <button class="tag" style="background-color: #65c2eb">3D Modeling</button>
+                                <button class="tag" style="background-color: #0889c9">2D Art</button>
+                                <button class="tag" style="background-color: #0889c9">2D Animation</button><br>
+                                <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>Team size: 35~40</li>
+                                    <li>Create concept arts</li>
+                                    <li>2D animation for lumi</li>
+                                    <li>Rig and animate all characters</li>
+                                    <li>Model, rig, and animate first-person arm</li>
+                                </ul><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proimage" onclick="redirectToPigandchikin()">
+                        <img src="project/pigandchikin/pccov.jpg" alt="pig&chikin" class="codepic">
+                        <div class="overlay1">
+                            <div class="textc">
+                                <span style="font-weight: 300; font-size: 30px;">Pig & Chikin 2024</span><br>
+                                <hr>
+                                <button class="tag" style="background-color: #65c2eb">3D Modeling</button>
+                                <button class="tag" style="background-color: #65c2eb">3D Rigging</button>
+                                <button class="tag" style="background-color: #65c2eb">3D Animation</button><br>
+                                <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>Team size: 30~35</li>
+                                    <li>Develop models for all characters</li>
+                                    <li>Establish rigs for all characters</li>
+                                    <li>Produce most animations for characters</li>
+                                </ul><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proimage" onclick="redirectToShepherds()">
+                        <img src="project/shepherds/shepherdscov.jpg" alt="Shepherds" class="codepic">
+                        <div class="overlay1">
+                            <div class="textc">
+                                <span style="font-weight: 300; font-size: 30px;">Shepherds 2024</span><br>
+                                <hr>
+                                <button class="tag" style="background-color: #c8e2b8">UI Design</button>
+                                <button class="tag" style="background-color: #0889c9">2D Art</button><br>
+                                <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>Team size: 35~40</li>
+                                    <li>Create fictional language</li>
+                                    <li>UI/UX design</li>
+                                    <li>Draw 2D assets</li>
+                                </ul><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proimage" onclick="directToBrinkmanship()">
+                        <img src="project/brinkmanship/brinkmanshipcover.png" alt="Brinkmanship" class="codepic">
+                        <div class="overlay1">
+                            <div class="textc">
+                                <span style="font-weight: 300; font-size: 28px;">Brinkmanship 2024</span><br>
+                                <hr>
+                                <button class="tag" style="background-color: #65c2eb">3D Modeling</button>
+                                <button class="tag" style="background-color: #65c2eb">3D Rigging</button>
+                                <button class="tag" style="background-color: #65c2eb">3D Animation</button><br>
+                                <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>Team size: ~25</li>
+                                    <li>Model assets</li>
+                                    <li>Model and rig first-person model</li>
+                                    <li>Create first-person perspective animations</li>
+                                </ul><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proimage" onclick="directToCitywitch()">
+                        <img src="project/citywitch/Title_Page.jpg" alt="citywitch" class="codepic">
+                        <div class="overlay1">
+                            <div class="textc">
+                                <span style="font-weight: 300; font-size: 30px;">City Witch 2023</span><br>
+                                <hr>
+                                <button class="tag" style="background-color: #94bcd2">Director</button>
+                                <button class="tag" style="background-color: #0b5d85">Lead Artist</button>
+                                <button class="tag" style="background-color: #0889c9">2D Art</button>
+                                <button class="tag" style="background-color: #0889c9">2D Animation</button>
+                                <button class="tag" style="background-color: #5b9abc">Narrative</button><br>
+                                <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>Team size: 2</li>
+                                    <li>Design and draw all art assets</li>
+                                    <li>Animation, background, UI, etc.</li>
+                                    <li>Conceptualize narrative and settings</li>
+                                </ul><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proimage" onclick="directToLittledream()">
+                        <img src="project/littledream/New_Cover.jpg" alt="littledream" class="codepic">
+                        <div class="overlay1">
+                            <div class="textc">
+                                <span style="font-weight: 300; font-size: 30px;">Little Dream 2022</span><br>
+                                <hr>
+                                <button class="tag" style="background-color: #94bcd2">Director</button>
+                                <button class="tag" style="background-color: #0b5d85">Lead Artist</button>
+                                <button class="tag" style="background-color: #0889c9">2D Art</button>
+                                <button class="tag" style="background-color: #5b9abc">Narrative</button><br>
+                                <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
+                                    <li>Board game</li>
+                                    <li>Team size: 1 -> 4 (2.0 ver)</li>
+                                    <li>Design and draw art assets</li>
+                                    <li>Gameplay design</li>
+                                    <li>Conceptualize narrative and settings</li>
+                                </ul><br>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <br>
-                <div style="display: flex;">
-                    <div class="bar" style="background-color: #69cdff;"></div>
-                    <button class="nav projectbutton" style="color: #69cdff;" onclick="redirectToProjects()">Projects</button>
-                </div>
-                <br>
-                <div style="display: flex;">
-                    <div class="bar" style="background-color: #a6e4f9;"></div>
-                    <button class="nav codebutton" style="color: #a6e4f9;" onclick="redirectToCode()">Code</button>
-                </div>
-                <br>
-                <div style="display: flex;">
-                    <div class="bar" style="background-color: #caecf3;"></div>
-                    <button class="nav artbutton" style="color: #caecf3;" onclick="redirectToArts()">Art</button>
-                </div>
-                <br>
-                <div style="display: flex;">
-                    <a href="mailto:doratsai@usc.edu" target="_blank" class="icon-link">
-                        <img src="img_folder/emaillogo.png" alt="Email" class="icon">
-                    </a>
-                
-                    <a href="https://linkedin.com/in/fangtungtsai" target="_blank" class="icon-link">
-                        <img src="img_folder/linkedinlogo.png" alt="LinkedIn" class="icon">
-                    </a>
-                
-                    <a href="https://github.com/doratsai1020" target="_blank" class="icon-link">
-                        <img src="img_folder/githublogo.png" alt="GitHub" class="icon">
-                    </a>
-                </div>
             </div>
+            
         </section>
-
+       
     </main>
 
     <footer>
-        <p style="text-align: center; margin: 0;">© 2024 doratsai. All rights reserved.</p>
+        <div style="display: flex;">
+            <h2 style="text-align: left; margin-left: 20px; margin: auto 0 auto 20px;" onclick="redirectToIntro()">Dora Tsai</h2>
+            <a href="mailto:doratsai@usc.edu" target="_blank" class="icon-link">
+                <img src="img_folder/emaillogo.png" alt="Email" class="footericon">
+            </a>
+        
+            <a href="https://linkedin.com/in/fangtungtsai" target="_blank" class="icon-link">
+                <img src="img_folder/linkedinlogo.png" alt="LinkedIn" class="footericon">
+            </a>
+        
+            <a href="https://github.com/doratsai1020" target="_blank" class="icon-link">
+                <img src="img_folder/githublogo.png" alt="GitHub" class="footericon">
+            </a>
+        </div>
     </footer>
 
     <script>
-        function redirectToProjects() {
-            window.location.href = 'projects.html';
+        function directToCitywitch() {
+            window.location.href = 'citywitch.html';
         }
 
-        function redirectToCode() {
-            window.location.href = 'codepros.html';
+        function directToLittledream() {
+            window.location.href = 'littledream.html';
         }
 
-        function redirectToArts() {
-            window.location.href = 'arts.html';
+        function directToBrinkmanship() {
+            window.location.href = 'brinkmanship.html';
+        }
+
+        function redirectToShepherds() {
+            window.location.href = 'shepherds.html';
+        }
+
+        function redirectToPigandchikin() {
+            window.location.href = 'pigandchikin.html';
+        }
+
+        function redirectToMythoflumi() {
+            window.location.href = 'mythoflumi.html';
+        }
+
+        function redirectToThewindandthewisp() {
+            window.location.href = 'thewindandthewisp.html';
         }
     </script>
 

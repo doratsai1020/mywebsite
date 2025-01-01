@@ -22,14 +22,6 @@ section {
     align-items: center;
 }
 
-.page {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100% - 50px;
-}
-
 button.tag {
     font-size: 13px;
     color: white;
@@ -60,13 +52,6 @@ h2 {
     background-color: white;
 }
 
-#intropage {
-    background: url('background.jpg') center/cover no-repeat;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-}
-
 .contents {
     padding: 6% 5%;
     animation: slideIn 1s ease-out forwards;
@@ -76,23 +61,8 @@ h2 {
     overflow: auto;
 }
 
-.introbox {
-    display: flex;
-}
-
 .bar {
     width: 20px;
-}
-
-.introtext {
-    padding: 0 20px;
-    background-color: transparent;
-    max-width: 400px;
-}
-
-.text {
-    letter-spacing: 0.05em;
-    line-height: 1.5;
 }
 
 h2 {
@@ -158,60 +128,6 @@ h2 {
     color: white !important;
 }
 
-.projectbutton {
-    color: var(--project-color);
-}
-
-.projectbutton::before {
-    background-color: var(--project-color);
-}
-
-.projectbutton:hover::before {
-    left: 0;
-    background-color: var(--project-color);
-}
-
-/* Specificity increased for :hover */
-.projectbutton:hover {
-    color: white;
-}
-
-.codebutton {
-    color: var(--code-color);
-}
-
-.codebutton::before {
-    background-color: var(--code-color);
-}
-
-.codebutton:hover::before {
-    left: 0;
-    background-color: var(--code-color);
-}
-
-/* Specificity increased for :hover */
-.codebutton:hover {
-    color: white;
-}
-
-.artbutton {
-    color: var(--art-color);
-}
-
-.artbutton::before {
-    background-color: var(--art-color);
-}
-
-.artbutton:hover::before {
-    left: 0;
-    background-color: var(--art-color);
-}
-
-/* Specificity increased for :hover */
-.artbutton:hover {
-    color: white;
-}
-
 .icon {
     width: 30px;
     margin: 10px;
@@ -222,14 +138,12 @@ h2 {
     margin: 5px 10px;
 }
 
-/* PROJECTS */
 .projectlist {
     overflow-y: auto; /* Enable vertical scrolling for the projectlist */
     flex-grow: 1; /* Allow the projectlist to grow and take remaining space */
     max-height: calc(80%);
 }
 
-/* Add this if needed to style the scroll bar */
 .projectlist::-webkit-scrollbar {
     width: 8px;
 }
@@ -285,7 +199,7 @@ h2 {
 .thumbnail:hover {
     -webkit-filter: opacity(.5);
     filter: opacity(.5);
-}
+} */
 
 /* CODE */
 .codelist {
@@ -370,20 +284,6 @@ img.codepic {
     overflow-x: auto; /* Enable horizontal scrolling for artlist */
     max-width: 100%; /* Set maximum width for horizontal scrolling */
 }
-
-/* .artlist::-webkit-scrollbar {
-    width: 5px; 
-    height: 5px;
-}
-
-.artlist::-webkit-scrollbar-track {
-    background-color:white;
-}
-
-.artlist::-webkit-scrollbar-thumb {
-    background-color: #a6e4f9;
-    border-radius: 80px;
-} */
 
 #overlay {
     display: none;

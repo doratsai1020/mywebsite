@@ -1,110 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dora Tsai's Portfolio Projects</title>
-    <link rel="icon" href="logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dora Tsai - Portfolio</title>
+    <style>
+        body {
+            font-family: "Libre Franklin",
+                "Helvetica Neue",
+                helvetica,
+                arial,
+                sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+            text-align: center;
+            size: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('background.png');
+            background-size: cover; /* Ensures full coverage */
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            content: "";
+        }
+
+        header {
+            padding: 20px;
+            padding-bottom: 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+h1 {
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0;
+}
+        nav {
+            display: flex;
+            gap: 10px;
+        }
+        .content {
+            padding: 20px;
+        }
+
+.bar {
+    width: 12px;
+}
+
+:root {
+    --first-color: #aad5ee;
+    --second-color: #7cc0e7;
+    --third-color: #62a3d1;
+    --fourth-color: #3a77a6;
+}
+
+.nav {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    width: fit-content;
+    padding: 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    position: relative;
+    overflow: hidden;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--first-color);
+    transition: color 0.3s ease;
+    font-family: "Libre Franklin",
+        "Helvetica Neue",
+        helvetica,
+        arial,
+        sans-serif;
+}
+
+.nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--first-color);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: left 0.3s ease, black 0.3s ease;
+    z-index: -1;
+}
+
+.nav:hover::before {
+    left: 0;
+    background-color: var(--first-color);
+}
+
+.nav:hover {
+    color: white !important;
+}
+
+.firstbutton {
+    color: var(--first-color);
+}
+
+.firstbutton::before {
+    background-color: var(--first-color);
+}
+
+.firstbutton:hover::before {
+    left: 0;
+    background-color: var(--first-color);
+}
+
+.firstbutton:hover {
+    color: white;
+}
+.secondbutton {
+    color: var(--second-color);
+}
+
+.secondbutton::before {
+    background-color: var(--second-color);
+}
+
+.secondbutton:hover::before {
+    left: 0;
+    background-color: var(--second-color);
+}
+
+.secondbutton:hover {
+    color: white;
+}
+
+.thirdbutton {
+    color: var(--third-color);
+}
+
+.thirdbutton::before {
+    background-color: var(--third-color);
+}
+
+.thirdbutton:hover::before {
+    left: 0;
+    background-color: var(--third-color);
+}
+
+.thirdbutton:hover {
+    color: white;
+}
+
+.fourthbutton {
+    color: var(--fourth-color);
+}
+
+.fourthbutton::before {
+    background-color: var(--fourth-color);
+}
+
+.fourthbutton:hover::before {
+    left: 0;
+    background-color: var(--fourth-color);
+}
+
+.fourthbutton:hover {
+    color: white;
+}
+
+
+button.tag {
+    font-size: 13px;
+    color: white;
+    border: solid;
+    border-color: transparent;
+    border-radius: 50px;
+    padding: 0 8px;
+    letter-spacing: 0.08em;
+    margin: 2px;
+}
+
+.artlist {
+    display: flex;
+    gap: 5px;
+    margin: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling for artlist */
+    max-width: 100%; /* Set maximum width for horizontal scrolling */
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000; /* Adjust z-index for overlay */
+}
+
+#popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Adjust z-index for popup container */
+    text-align: center; /* Center content */
+}
+
+#popup-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: auto;
+    display: block;
+}
+
+#overlay button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+#overlay button.prev {
+    position: fixed;
+    left: 30px;
+}
+
+#overlay button.next {
+    position: fixed;
+    right: 30px;
+}
+
+#overlay button.close {
+    position: fixed;
+    top: 30px; /* Adjust top positioning */
+    right: 30px; /* Adjust right positioning */
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px; /* Add padding for better visibility */
+}
+
+.thumbnail {
+    height: 200px; 
+    width: auto; 
+    cursor: pointer;
+}
+
+.text-container {
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    max-width: 1000px;
+    text-align:center;
+    margin:0 auto;
+}
+        
+    </style>
 </head>
-
 <body>
-    <main>
-        <section id="projectpage" class="page">
-            <div class="contents">
+    <div class="background"></div>
+    <header>
+        <h1>Dora Tsai</h1>
+        <nav>
+            <div style="display: flex;">
+                <div class="bar" style="background-color: #aad5ee;"></div>
+                <button class="nav firsttbutton" style="color: #aad5ee;" onclick="redirectToHome()">Home</button>
+            </div>
+            <div style="display: flex;">
+                <div class="bar" style="background-color: #7cc0e7;"></div>
+                <button class="nav secondbutton" style="color: #7cc0e7;" onclick="redirectToProjects()">Projects</button>
+            </div>
+            <div style="display: flex;">
+                <div class="bar" style="background-color: #62a3d1;"></div>
+                <button class="nav thirdbutton" style="color: #62a3d1;" onclick="redirectToArt()">Art</button>
+            </div>
+            <div style="display: flex;">
+                <div class="bar" style="background-color: #3a77a6;"></div>
+                <button class="nav fourthbutton" style="color: #3a77a6;" onclick="redirectToContacts()">Contact</button>
+            </div>
+        </nav>
+    </header>
+    <hr style="height: 8px; background-color: #a9d5ee; border: none; padding-top: 0px; margin: 0;">
+
+    <h2 style="margin-bottom: 5px;">Little Dream</h2>
+    <button class="tag" style="background-color: #94bcd2">Director</button>
+    <button class="tag" style="background-color: #0b5d85">Lead Artist</button>
+    <button class="tag" style="background-color: #0889c9">2D Art</button>
+    <button class="tag" style="background-color: #5b9abc">Narrative</button><br>
+    
+    <div style="margin: auto;">
+        <div class="text-container">
+            <p>Little Dream is a board game exploring childhood ambition, nostalgia, 
+                and helplessness. Originally a solo project for CTIN 488, I designed 
+                and developed it to evoke the feeling of hopelessness. After being 
+                selected for further development, it became a team effort, refining 
+                the narrative with character cards while preserving my original vision.
+            </p>
+            <div style="width: fit-content; margin: auto;">
                 <div style="display: flex;">
-                    <div class="bar" style="background-color: #69cdff;"></div>
-                    <h2>Little Dream</h2>
-                </div>
-                <br>
-                <div class="projectlist">
-                    <div class="gamepro">
-                        <div class="projectimg">
-                            <img src="project/littledream/little_dream_cover.jpg" alt="little dream" class="projectpic">
-                        </div>
-                        <div class="text-container">
-                            <span style="font-weight: 300; font-size: 30px;">Little Dream 2022</span><br>
-                            <hr>
-                            <button class="tag" style="background-color: #94bcd2">Director</button>
-                            <button class="tag" style="background-color: #0b5d85">Lead Artist</button>
-                            <button class="tag" style="background-color: #0889c9">2D Art</button>
-                            <button class="tag" style="background-color: #5b9abc">Narrative</button><br>
-                            <p>"Little Dream," initially a solo endeavor, transformed into a 
-                                poignant board game encapsulating childhood ambition, helplessness
-                                , and nostalgia. The first version mirrored my personal vision, 
-                                portraying school kids striving to build a rocket and reach the moon 
-                                amid life's challenges. Version two, a collaborative effort, refined 
-                                the original with character cards, enhancing the narrative and player 
-                                engagement. This joint creation beautifully balances individual 
-                                creativity and collective imagination, serving as a reminder of childhood dreams 
-                            </p>
-                            <ul style="font-weight: bold; padding-left: 5%; font-size: 13px;">
-                                <li>Board game</li>
-                                <li>Team size: 1 -> 4 (2.0 ver)</li>
-                                <li>Design and draw art assets</li>
-                                <li>Gameplay design</li>
-                                <li>Conceptualize narrative and settings</li>
-                            </ul><br>
-                            <div style="display: flex;">
-                                <div class="bar" style="background-color: #69cdff; width: 15px"></div>
-                                <a href="project/littledream/The Little Dream to the Moon Photo Journal wk9 copy.pdf" target="_blank" rel="noopener noreferrer">
-                                    <button class="nav projectbutton" style="color: #69cdff; font-size: 18px;">Journal</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="artlist">
-                        <img src="project/littledream/rules.jpg" alt="rules" class="thumbnail" onclick="openPopup('project/littledream/rules.jpg')">
-                        <img src="project/littledream/rocket.jpg" alt="rocket" class="thumbnail" onclick="openPopup('project/littledream/rocket.jpg')">
-                        <img src="project/littledream/characterback.jpg" alt="ccardb" class="thumbnail" onclick="openPopup('project/littledream/characterback.jpg')">
-                        <img src="project/littledream/charactercard.jpg" alt="ccard" class="thumbnail" onclick="openPopup('project/littledream/charactercard.jpg')">
-                        <img src="project/littledream/functioncard.jpg" alt="fcard" class="thumbnail" onclick="openPopup('project/littledream/functioncard.jpg')">
-                        <img src="project/littledream/Gainmaterial.jpg" alt="gcard" class="thumbnail" onclick="openPopup('project/littledream/Gainmaterial.jpg')">
-                        <img src="project/littledream/Unfreecard.jpg" alt="ucard" class="thumbnail" onclick="openPopup('project/littledream/Unfreecard.jpg')">
-                        <img src="project/littledream/Breakingcard.jpg" alt="bcard" class="thumbnail" onclick="openPopup('project/littledream/Breakingcard.jpg')">
-                        <img src="project/littledream/Reportcard.jpg" alt="rcard" class="thumbnail" onclick="openPopup('project/littledream/Reportcard.jpg')">
-                    </div>
-                    <br>
-                    <div style="display: flex;">
-                        <div class="bar" style="background-color: #69cdff; width: 15px"></div>
-                        <button class="nav projectbutton" style="color: #69cdff; font-size: 18px;" onclick="redirectToProjects()">Back</button>
-                    </div>
+                    <div class="bar" style="background-color: #aad5ee; width: 15px"></div>
+                    <a href="art/littledream/The Little Dream to the Moon Photo Journal wk9 copy.pdf" target="_blank" rel="noopener noreferrer">
+                        <button class="nav projectbutton" style="color: #aad5ee; font-size: 18px;">Journal</button>
+                    </a>
                 </div>
             </div>
-
-            <!-- Popup container -->
-            <div id="overlay" onclick="closePopup()">
-                <button class="close" onclick="closePopup()">&#10005;</button>
-                <button class="prev" onclick="prevImage()">&#10094;</button>
-                <button class="next" onclick="nextImage()">&#10095;</button>
-            </div>
-            <div id="popup-container">
-                <img id="popup-image" src="" alt="popup">
-            </div>
-        </section>
-       
-    </main>
-
-    <footer>
-        <div style="display: flex;">
-            <h2 style="text-align: left; margin-left: 20px; cursor: pointer;" onclick="redirectToIntro()">Dora Tsai</h2>
-            <a href="mailto:doratsai@usc.edu" target="_blank" class="icon-link">
-                <img src="img_folder/emaillogo.png" alt="Email" class="footericon">
-            </a>
-        
-            <a href="https://linkedin.com/in/fangtungtsai" target="_blank" class="icon-link">
-                <img src="img_folder/linkedinlogo.png" alt="LinkedIn" class="footericon">
-            </a>
-        
-            <a href="https://github.com/doratsai1020" target="_blank" class="icon-link">
-                <img src="img_folder/githublogo.png" alt="GitHub" class="footericon">
-            </a>
         </div>
-    </footer>
+        <h3>Concept art and assets:</h3>
+        <div>
+            <img src="art/littledream/rules.jpg" class="thumbnail" onclick="openPopup('art/citywitch/sasha.jpg')">
+        </div>
+        <div>
+            <img src="art/littledream/characterback.jpg" class="thumbnail" onclick="openPopup('art/citywitch/sasha.jpg')">
+            <img src="art/littledream/charactercard.jpg" class="thumbnail" onclick="openPopup('art/citywitch/sasha.jpg')">
+            <img src="art/littledream/functioncard.jpg" class="thumbnail" onclick="openPopup('art/citywitch/sasha.jpg')">
+            <img src="art/littledream/Gainmaterial.jpg" class="thumbnail" onclick="openPopup('art/citywitch/sasha.jpg')">
+            <img src="art/littledream/Reportcard.jpg" class="thumbnail" onclick="openPopup('art/citywitch/sasha.jpg')">
+            <img src="art/littledream/Breakingcard.jpg" class="thumbnail" onclick="openPopup('art/citywitch/sasha.jpg')">
+            <img src="art/littledream/rocket.jpg" class="thumbnail" onclick="openPopup('art/citywitch/sasha.jpg')">
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+        
+
+    <!-- Popup container -->
+    <div id="overlay" onclick="closePopup()">
+        <button class="close" onclick="closePopup()">&#10005;</button>
+        <button class="prev" onclick="prevImage()">&#10094;</button>
+        <button class="next" onclick="nextImage()">&#10095;</button>
+    </div>
+    <div id="popup-container">
+        <img id="popup-image" src="" alt="popup">
+    </div>
+    
 
     <script>
-        function redirectToIntro() {
+        function redirectToHome() {
             window.location.href = 'index.html';
         }
 
@@ -112,56 +362,53 @@
             window.location.href = 'projects.html';
         }
 
+        function redirectToArt() {
+            window.location.href = 'art.html';
+        }
+
+        function redirectToContacts() {
+            window.location.href = 'contacts.html'
+        }
+
         var images = [
-            'project/littledream/rules.jpg',
-            'project/littledream/rocket.jpg',
-            'project/littledream/characterback.jpg',
-            'project/littledream/charactercard.jpg',
-            'project/littledream/functioncard.jpg',
-            'project/littledream/Gainmaterial.jpg',
-            'project/littledream/Unfreecard.jpg',
-            'project/littledream/Breakingcard.jpg',
-            'project/littledream/Reportcard.jpg'
+            'art/citywitch/remi.jpg',
         ];
 
-    var currentIndex = 0;
+        var currentIndex = 0;
 
-    function openPopup(source) {
-        document.getElementById('overlay').style.display = 'block';
-        document.getElementById('popup-container').style.display = 'block';
+        function openPopup(source) {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup-container').style.display = 'block';
 
-        currentIndex = images.indexOf(source);
+            currentIndex = images.indexOf(source);
 
-        showImage();
-    }
-
-    function showImage() {
-        var source = images[currentIndex];
-        document.getElementById('popup-image').src = source;
-    }
-
-    function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage();
-    }
-
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage();
-    }
-
-    function closePopup(event) {
-        // Check if the click occurred on the "x" button
-        if (event.target.classList.contains('close')) {
-            document.getElementById('overlay').style.display = 'none';
-            document.getElementById('popup-container').style.display = 'none';
+            showImage();
         }
-    }
 
-    document.getElementById('overlay').addEventListener('click', closePopup);
+        function showImage() {
+            var source = images[currentIndex];
+            document.getElementById('popup-image').src = source;
+        }
 
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage();
+        }
+
+        function closePopup(event) {
+            // Check if the click occurred on the "x" button
+            if (event.target.classList.contains('close')) {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('popup-container').style.display = 'none';
+            }
+        }
+
+        document.getElementById('overlay').addEventListener('click', closePopup);
     </script>
-
 </body>
-
 </html>

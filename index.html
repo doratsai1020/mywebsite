@@ -1,81 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dora Tsai's Portfolio</title>
-    <link rel="icon" href="logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dora Tsai - Portfolio</title>
+    <style>
+        body {
+            font-family: "Libre Franklin",
+                "Helvetica Neue",
+                helvetica,
+                arial,
+                sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+            text-align: center;
+            size: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('background.png');
+            background-size: cover; /* Ensures full coverage */
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            content: "";
+        }
+
+        header {
+            padding: 20px;
+            padding-bottom: 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        h1 {
+            font-size: 30px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            gap: 10px;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .bar {
+            width: 12px;
+        }
+
+        :root {
+            --first-color: #aad5ee;
+            --second-color: #7cc0e7;
+            --third-color: #62a3d1;
+            --fourth-color: #3a77a6;
+        }
+
+        .nav {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            width: fit-content;
+            padding: 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            position: relative;
+            overflow: hidden;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--first-color);
+            transition: color 0.3s ease;
+            font-family: "Libre Franklin",
+                "Helvetica Neue",
+                helvetica,
+                arial,
+                sans-serif;
+        }
+
+        .nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--first-color);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            transition: left 0.3s ease, black 0.3s ease;
+            z-index: -1;
+        }
+
+        .nav:hover::before {
+            left: 0;
+            background-color: var(--first-color);
+        }
+
+        .nav:hover {
+            color: white !important;
+        }
+
+        .firstbutton {
+            color: var(--first-color);
+        }
+
+        .firstbutton::before {
+            background-color: var(--first-color);
+        }
+
+        .firstbutton:hover::before {
+            left: 0;
+            background-color: var(--first-color);
+        }
+
+        .firstbutton:hover {
+            color: white;
+        }
+        .secondbutton {
+            color: var(--second-color);
+        }
+
+        .secondbutton::before {
+            background-color: var(--second-color);
+        }
+
+        .secondbutton:hover::before {
+            left: 0;
+            background-color: var(--second-color);
+        }
+
+        .secondbutton:hover {
+            color: white;
+        }
+
+        .thirdbutton {
+            color: var(--third-color);
+        }
+
+        .thirdbutton::before {
+            background-color: var(--third-color);
+        }
+
+        .thirdbutton:hover::before {
+            left: 0;
+            background-color: var(--third-color);
+        }
+
+        .thirdbutton:hover {
+            color: white;
+        }
+
+        .fourthbutton {
+            color: var(--fourth-color);
+        }
+
+        .fourthbutton::before {
+            background-color: var(--fourth-color);
+        }
+
+        .fourthbutton:hover::before {
+            left: 0;
+            background-color: var(--fourth-color);
+        }
+
+        .fourthbutton:hover {
+            color: white;
+        }
+
+        
+    </style>
 </head>
-
 <body>
-    <main>
-        <section id="intropage" class="page">
-            <div class="contents">
-                <div class="introbox" style="display: flex;">
-                    <div class="bar" style="background-color: #69cdff;"></div>
-                    <div class="introtext">
-                        <h1>Dora Tsai</h1>
-                        <p class="text">
-                        Welcome to my portfolio, a curated showcase of my academic journey as a <b>Computer Science Games</b> major with a minor in
-                        <b>Technical Game Art</b> at the University of Southern California. Explore my work for a comprehensive view of my proficiency in <button class="tag" style="background-color: #a5d19b">Coding</button>,
-                        <button class="tag" style="background-color: #0889c9">2D Art</button>, <button class="tag" style="background-color: #65c2eb">3D Art</button>, 
-                        <button class="tag" style="background-color: #94bcd2">Game Design</button>, and <button class="tag" style="background-color: #5b9abc">Narrative</button> design.</p>
-                    </div>
-                </div>
-                <br>
-                <div style="display: flex;">
-                    <div class="bar" style="background-color: #69cdff;"></div>
-                    <button class="nav projectbutton" style="color: #69cdff;" onclick="redirectToProjects()">Projects</button>
-                </div>
-                <br>
-                <div style="display: flex;">
-                    <div class="bar" style="background-color: #a6e4f9;"></div>
-                    <button class="nav codebutton" style="color: #a6e4f9;" onclick="redirectToCode()">Code</button>
-                </div>
-                <br>
-                <div style="display: flex;">
-                    <div class="bar" style="background-color: #caecf3;"></div>
-                    <button class="nav artbutton" style="color: #caecf3;" onclick="redirectToArts()">Art</button>
-                </div>
-                <br>
-                <div style="display: flex;">
-                    <a href="mailto:doratsai@usc.edu" target="_blank" class="icon-link">
-                        <img src="img_folder/emaillogo.png" alt="Email" class="icon">
-                    </a>
-                
-                    <a href="https://linkedin.com/in/fangtungtsai" target="_blank" class="icon-link">
-                        <img src="img_folder/linkedinlogo.png" alt="LinkedIn" class="icon">
-                    </a>
-                
-                    <a href="https://github.com/doratsai1020" target="_blank" class="icon-link">
-                        <img src="img_folder/githublogo.png" alt="GitHub" class="icon">
-                    </a>
-                </div>
+    <div class="background"></div>
+    <header>
+        <h1>Dora Tsai</h1>
+        <nav>
+            <div style="display: flex;">
+                <div class="bar" style="background-color: #aad5ee;"></div>
+                <button class="nav firsttbutton" style="color: #aad5ee;" onclick="redirectToHome()">Home</button>
             </div>
-        </section>
+            <div style="display: flex;">
+                <div class="bar" style="background-color: #7cc0e7;"></div>
+                <button class="nav secondbutton" style="color: #7cc0e7;" onclick="redirectToProjects()">Projects</button>
+            </div>
+            <div style="display: flex;">
+                <div class="bar" style="background-color: #62a3d1;"></div>
+                <button class="nav thirdbutton" style="color: #62a3d1;" onclick="redirectToArt()">Art</button>
+            </div>
+            <div style="display: flex;">
+                <div class="bar" style="background-color: #3a77a6;"></div>
+                <button class="nav fourthbutton" style="color: #3a77a6;" onclick="redirectToContacts()">Contact</button>
+            </div>
+        </nav>
+    </header>
+    <hr style="height: 8px; background-color: #a9d5ee; border: none; padding-top: 0px; margin: 0;">
 
-    </main>
-
-    <footer>
-        <p style="text-align: center; margin: 0;">© 2024 doratsai. All rights reserved.</p>
-    </footer>
+    <h2 style="text-transform: uppercase;">Rig/Animation Demo Reel:</h2>
+        <div>
+            <img src="placeholder2.jpg" style="width: 852px;">
+            <!-- <iframe src="https://www.youtube.com/embed/BGSEGfEPpyY?autoplay=1" width="852" height="480" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Character Rigging Demo Reel" data-ready="true"></iframe> -->
+        </div>
+    </div>
 
     <script>
+        function redirectToHome() {
+            window.location.href = 'index.html';
+        }
+
         function redirectToProjects() {
             window.location.href = 'projects.html';
         }
 
-        function redirectToCode() {
-            window.location.href = 'codepros.html';
+        function redirectToArt() {
+            window.location.href = 'art.html';
         }
 
-        function redirectToArts() {
-            window.location.href = 'arts.html';
+        function redirectToContacts() {
+            window.location.href = 'contacts.html'
         }
     </script>
-
 </body>
-
 </html>

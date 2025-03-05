@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dora Tsai - Portfolio</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: "Libre Franklin",
+                "Helvetica Neue",
+                helvetica,
+                arial,
+                sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+            text-align: center;
+            size: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('background.png');
+            background-size: cover; /* Ensures full coverage */
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            content: "";
+        }
+
+        header {
+            padding: 20px;
+            padding-bottom: 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+h1 {
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0;
+}
+        nav {
+            display: flex;
+            gap: 10px;
+        }
+        .content {
+            padding: 20px;
+        }
+
+.bar {
+    width: 12px;
+}
+
+:root {
+    --first-color: #aad5ee;
+    --second-color: #7cc0e7;
+    --third-color: #62a3d1;
+    --fourth-color: #3a77a6;
+}
+
+.nav {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    width: fit-content;
+    padding: 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    position: relative;
+    overflow: hidden;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--first-color);
+    transition: color 0.3s ease;
+    font-family: "Libre Franklin",
+        "Helvetica Neue",
+        helvetica,
+        arial,
+        sans-serif;
+}
+
+.nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--first-color);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: left 0.3s ease, black 0.3s ease;
+    z-index: -1;
+}
+
+.nav:hover::before {
+    left: 0;
+    background-color: var(--first-color);
+}
+
+.nav:hover {
+    color: white !important;
+}
+
+.firstbutton {
+    color: var(--first-color);
+}
+
+.firstbutton::before {
+    background-color: var(--first-color);
+}
+
+.firstbutton:hover::before {
+    left: 0;
+    background-color: var(--first-color);
+}
+
+.firstbutton:hover {
+    color: white;
+}
+.secondbutton {
+    color: var(--second-color);
+}
+
+.secondbutton::before {
+    background-color: var(--second-color);
+}
+
+.secondbutton:hover::before {
+    left: 0;
+    background-color: var(--second-color);
+}
+
+.secondbutton:hover {
+    color: white;
+}
+
+.thirdbutton {
+    color: var(--third-color);
+}
+
+.thirdbutton::before {
+    background-color: var(--third-color);
+}
+
+.thirdbutton:hover::before {
+    left: 0;
+    background-color: var(--third-color);
+}
+
+.thirdbutton:hover {
+    color: white;
+}
+
+.fourthbutton {
+    color: var(--fourth-color);
+}
+
+.fourthbutton::before {
+    background-color: var(--fourth-color);
+}
+
+.fourthbutton:hover::before {
+    left: 0;
+    background-color: var(--fourth-color);
+}
+
+.fourthbutton:hover {
+    color: white;
+}
+
+button.tag {
+    font-size: 13px;
+    color: white;
+    border: solid;
+    border-color: transparent;
+    border-radius: 50px;
+    padding: 0 8px;
+    letter-spacing: 0.08em;
+    margin: 2px;
+}
+
+.artlist {
+    display: flex;
+    gap: 5px;
+    margin: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling for artlist */
+    max-width: 100%; /* Set maximum width for horizontal scrolling */
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000; /* Adjust z-index for overlay */
+}
+
+#popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Adjust z-index for popup container */
+    text-align: center; /* Center content */
+}
+
+#popup-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: auto;
+    display: block;
+}
+
+#overlay button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+#overlay button.prev {
+    position: fixed;
+    left: 30px;
+}
+
+#overlay button.next {
+    position: fixed;
+    right: 30px;
+}
+
+#overlay button.close {
+    position: fixed;
+    top: 30px; /* Adjust top positioning */
+    right: 30px; /* Adjust right positioning */
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px; /* Add padding for better visibility */
+}
+
+.thumbnail {
+    height: 200px; 
+    width: auto; 
+    cursor: pointer;
+}
+
+.text-container {
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    max-width: 1000px;
+    text-align:center;
+    margin:0 auto;
+}
+        
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <header>
+        <h1>Dora Tsai</h1>
+        <nav>
+            <div style="display: flex;">
+                <div class="bar" style="background-color: #aad5ee;"></div>
+                <button class="nav firsttbutton" style="color: #aad5ee;" onclick="redirectToHome()">Home</button>
+            </div>
+            <div style="display: flex;">
+                <div class="bar" style="background-color: #7cc0e7;"></div>
+                <button class="nav secondbutton" style="color: #7cc0e7;" onclick="redirectToProjects()">Projects</button>
+            </div>
+            <div style="display: flex;">
+                <div class="bar" style="background-color: #62a3d1;"></div>
+                <button class="nav thirdbutton" style="color: #62a3d1;" onclick="redirectToArt()">Art</button>
+            </div>
+            <div style="display: flex;">
+                <div class="bar" style="background-color: #3a77a6;"></div>
+                <button class="nav fourthbutton" style="color: #3a77a6;" onclick="redirectToContacts()">Contact</button>
+            </div>
+        </nav>
+    </header>
+    <hr style="height: 8px; background-color: #a9d5ee; border: none; padding-top: 0px; margin: 0;">
+
+    <h2 style="margin-bottom: 5px;">Myth of Lumi</h2>
+    <button class="tag" style="background-color: #65c2eb">3D Animation</button>
+    <button class="tag" style="background-color: #65c2eb">3D Rigging</button>
+    <button class="tag" style="background-color: #0889c9">Graphic Design</button>
+    <button class="tag" style="background-color: #0889c9">2D Art</button><br>
+    
+    <div style="margin: auto;">
+        <div class="text-container">
+            <p>Coming soon! 
+            </p>
+            <div style="width: fit-content; margin: auto;">
+                <!-- <div style="display: flex;">
+                    <div class="bar" style="background-color: #aad5ee; width: 15px"></div>
+                    <a href="https://qpc123.itch.io/city-witch" target="_blank" rel="noopener noreferrer">
+                        <button class="nav projectbutton" style="color: #aad5ee; font-size: 18px;">Play</button>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+        <h3>Prop graphic designs:</h3>
+        <div>
+            <img src="art/mythoflumi/cardback.jpg" class="thumbnail" onclick="openPopup('art/mythoflumi/cardback.jpg')">
+        </div>
+        <h3>Mixamo animation cleanup:</h3>
+        <div>
+            <img src="art/mythoflumi/audience1.MOV" class="thumbnail" onclick="openPopup('art/mythoflumi/audience1.MOV')">
+            <img src="art/mythoflumi/audience2.MOV" class="thumbnail" onclick="openPopup('aart/mythoflumi/audience2.MOV')">
+            <img src="art/mythoflumi/audience3.MOV" class="thumbnail" onclick="openPopup('art/mythoflumi/AudienceMaleCheer.MOV')">
+        </div>
+
+        <br><br><br><br><br><br>
+
+        <!-- Popup container -->
+        <div id="overlay" onclick="closePopup()">
+            <button class="close" onclick="closePopup()">&#10005;</button>
+            <button class="prev" onclick="prevImage()">&#10094;</button>
+            <button class="next" onclick="nextImage()">&#10095;</button>
+        </div>
+        <div id="popup-container">
+            <img id="popup-image" src="" alt="popup">
+        </div>
+    
+
+    <script>
+        function redirectToHome() {
+            window.location.href = 'index.html';
+        }
+
+        function redirectToProjects() {
+            window.location.href = 'projects.html';
+        }
+
+        function redirectToArt() {
+            window.location.href = 'art.html';
+        }
+
+        function redirectToContacts() {
+            window.location.href = 'contacts.html'
+        }
+
+        var images = [
+            'art/mythoflumi/cardback.jpg',
+            'art/mythoflumi/audience1.MOV',
+            'art/mythoflumi/audience2.MOV',
+            'art/mythoflumi/audience3.MOV',
+        ];
+
+        var currentIndex = 0;
+
+        function openPopup(source) {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup-container').style.display = 'block';
+
+            currentIndex = images.indexOf(source);
+
+            showImage();
+        }
+
+        function showImage() {
+            var source = images[currentIndex];
+            document.getElementById('popup-image').src = source;
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage();
+        }
+
+        function closePopup(event) {
+            // Check if the click occurred on the "x" button
+            if (event.target.classList.contains('close')) {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('popup-container').style.display = 'none';
+            }
+        }
+
+        document.getElementById('overlay').addEventListener('click', closePopup);
+    </script>
+</body>
+</html>

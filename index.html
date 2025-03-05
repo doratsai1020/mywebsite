@@ -181,6 +181,148 @@
             color: white;
         }
 
+        .gallery {
+    text-align: center;
+    padding: 20px 20px;
+    padding-top: 0;
+    color: black;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 1x4 layout */
+    gap: 5px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Adjust grid to 2x2 when there are only 4 items */
+.gallery-grid.two-by-two {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 layout */
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark transparent overlay */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2x2 layout for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+    }
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000; /* Adjust z-index for overlay */
+}
+
+#popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Adjust z-index for popup container */
+    text-align: center; /* Center content */
+}
+
+#popup-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: auto;
+    display: block;
+}
+
+#overlay button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+#overlay button.prev {
+    position: fixed;
+    left: 30px;
+}
+
+#overlay button.next {
+    position: fixed;
+    right: 30px;
+}
+
+#overlay button.close {
+    position: fixed;
+    top: 30px; /* Adjust top positioning */
+    right: 30px; /* Adjust right positioning */
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px; /* Add padding for better visibility */
+}
+
         
     </style>
 </head>
@@ -209,12 +351,54 @@
     </header>
     <hr style="height: 8px; background-color: #a9d5ee; border: none; padding-top: 0px; margin: 0;">
 
-    <h2 style="text-transform: uppercase;">Rig/Animation Demo Reel:</h2>
-        <div>
-            <img src="placeholder2.jpg" style="width: 852px;">
-            <!-- <iframe src="https://www.youtube.com/embed/BGSEGfEPpyY?autoplay=1" width="852" height="480" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Character Rigging Demo Reel" data-ready="true"></iframe> -->
+    <h2>Hi, I’m Dora! Here’s a collection of my rigging and animation work...</h2>
+    <section id="game-art" class="gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openPopup('art/centar.MOV')">
+                <img src="art/centar.MOV" alt="Game Art 2">
+                <div class="gallery-overlay">Centaur Rig Showcase</div>
+            </div>
+            <div class="gallery-item" onclick="openPopup('art/thewindandthewisp/zinnia.gif')">
+                <img src="art/thewindandthewisp/zinnia.gif" alt="Game Art 2">
+                <div class="gallery-overlay">Flower Animation</div>
+            </div>
+            <div class="gallery-item" onclick="openPopup('art/mythoflumi/lumi.gif')">
+                <img src="art/mythoflumi/lumi.gif" alt="Game Art 1">
+                <div class="gallery-overlay">Quadruped Creature Rig</div>
+            </div>
+            <div class="gallery-item" onclick="openPopup('art/bow.gif')">
+                <img src="art/bow.gif" alt="Game Art 1">
+                <div class="gallery-overlay">Bow Tie Animation</div>
+            </div>
+            <div class="gallery-item" onclick="openPopup('art/mythoflumi/douglaugh.MOV')">
+                <img src="art/mythoflumi/douglaugh.MOV" alt="Game Art 1">
+                <div class="gallery-overlay">Laughing Character Animation</div>
+            </div>
+            <div class="gallery-item" onclick="openPopup('art/thewindandthewisp/lilbuddyfall.gif')">
+                <img src="art/thewindandthewisp/lilbuddyfall.gif" alt="Game Art 2">
+                <div class="gallery-overlay">Bird Falling Animation</div>
+            </div>
+            <div class="gallery-item" onclick="openPopup('art/flower.gif')">
+                <img src="art/flower.gif" alt="Game Art 1">
+                <div class="gallery-overlay">Petals Falling Animation</div>
+            </div>
+            <div class="gallery-item" onclick="openPopup('art/mythoflumi/audience3.MOV')">
+                <img src="art/mythoflumi/audience3.MOV" alt="Game Art 2">
+                <div class="gallery-overlay">Mocap Cleanup</div>
+            </div>
         </div>
+    </section> 
+
+    <!-- Popup container -->
+    <div id="overlay" onclick="closePopup()">
+        <button class="close" onclick="closePopup()">&#10005;</button>
+        <button class="prev" onclick="prevImage()">&#10094;</button>
+        <button class="next" onclick="nextImage()">&#10095;</button>
     </div>
+    <div id="popup-container">
+        <img id="popup-image" src="" alt="popup">
+    </div>
+
 
     <script>
         function redirectToHome() {
@@ -232,6 +416,53 @@
         function redirectToContacts() {
             window.location.href = 'contacts.html'
         }
+
+        var images = [
+            'art/centar.MOV',
+            'art/thewindandthewisp/zinnia.gif',
+            'art/mythoflumi/lumi.gif',
+            'art/bow.gif',
+            'art/mythoflumi/douglaugh.MOV',
+            'art/thewindandthewisp/lilbuddyfall.gif',
+            'art/flower.gif',
+            'art/mythoflumi/audience3.MOV'
+        ];
+
+        var currentIndex = 0;
+
+        function openPopup(source) {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup-container').style.display = 'block';
+
+            currentIndex = images.indexOf(source);
+
+            showImage();
+        }
+
+        function showImage() {
+            var source = images[currentIndex];
+            document.getElementById('popup-image').src = source;
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage();
+        }
+
+        function closePopup(event) {
+            // Check if the click occurred on the "x" button
+            if (event.target.classList.contains('close')) {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('popup-container').style.display = 'none';
+            }
+        }
+
+        document.getElementById('overlay').addEventListener('click', closePopup);
     </script>
 </body>
 </html>
